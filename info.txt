@@ -1,0 +1,4 @@
+npm install @angular/cli@13.0.0
+ng new amit-tutorial
+ng g c shared/navbar
+
