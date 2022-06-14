@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { APICallService } from '../apicall.service';
-import { Observable, interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tutorial',
