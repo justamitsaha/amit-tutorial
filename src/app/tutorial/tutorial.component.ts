@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { APICallService } from '../apicall.service';
+import { Observable, interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tutorial',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorialComponent implements OnInit {
 
-  constructor() { }
+  content: any;
+  subjectHeader: String = "";
+  constructor(
+    private apiCallService: APICallService
+  ) { }
 
   ngOnInit(): void {
+    this.apiCallService.getData().subscribe(data => {
+      this.content = data.content;
+      this.subjectHeader = data.content.topicHeader;
+    });
+
   }
 
 }

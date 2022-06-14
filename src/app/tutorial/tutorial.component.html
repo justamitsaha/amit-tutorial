@@ -1,64 +1,16 @@
-<div class="container">
-    <h1><span class="badge bg-secondary">Exception Handelling</span></h1>
-    <div class="card">
+<div class="container" *ngIf="!!content">
+    <h1><span class="badge bg-secondary">{{content.topicHeader}}</span></h1>
+    <div class="card" *ngFor="let cardContent of content.cardContentList">
         <div class="card-body">
-            <h2 class="card-title">Types of exception</h2>
-            <p class="card-text">In Java, all exceptions that inherit Exception but not RuntimeException are considered
-                checked exceptions.
-                <br> <b> ArithmeticException :-</b> Thrown when code attempts to divide by zero
-
-                <br> <b>ArrayIndexOutOfBoundsException:- </b> Thrown when code uses an illegal index to access an array
-
-                <br> <b>ClassCastException :- </b>Thrown when an attempt is made to cast an object to a class of which
-                it is
-                not an instance
-
-                <br> <b>NullPointerException :- </b>Thrown when there is a null reference where an object is required
-
-                <br> <b>IllegalArgumentException :-</b> Thrown by the programmer to indicate that a method has been
-                passed an
-                illegal or inappropriate argument
-
-                <br> <b>NumberFormatException :- </b>Subclass of "IllegalArgumentException" thrown when an attempt is
-                made to
-                convert a string to a numeric type but the string doesn't have an appropriate format
-
-                DOES NOT COMPILE if this is placed below as NumberFormatException is a
-                subclass of IllegalArgumentException
-            </p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-title">Try Catch Basic Rules</h2>
-            <p class="card-text">
-                Try block must have a catch or finally
-            </p>
+            <h2 class="card-title">{{cardContent.cardHeader}}</h2>
+            <div *ngFor="let text of cardContent.cardMsg">
+                <p class="card-text">{{text}}</p>
+            </div>
             <div class="d-flex">
-                <div class="p-2 flex-fill">
-                    <b>
-                        <br>try {{ '{' }}
-                        <br>System.out.println();
-                        <br>"{{ '}' }}" catch (Exception e) "{{ '{' }}"
-                        <br>"{{ '}' }}"
-                    </b>
-                </div>
-                <div class="p-2 flex-fill">
-                    <b>
-                        <br>try {{ '{' }}
-                        <br>System.out.println();
-                        <br>"{{ '}' }}" catch (Exception e) "{{ '{' }}"
-                        <br>"{{ '}' }}"
-                    </b>
-                </div>
-                <div class="p-2 flex-fill">
-                    <b>
-                        <br>try {{ '{' }}
-                        <br>System.out.println();
-                        <br>"{{ '}' }}" catch (Exception e) "{{ '{' }}"
-                        <br>"{{ '}' }}"
-                    </b>
+                <div class="p-2 flex-fill fw-bold fst-italic" *ngFor="let code of cardContent.cardCode">
+                    <div [innerHTML]=code.code>
+
+                    </div>
                 </div>
             </div>
         </div>
