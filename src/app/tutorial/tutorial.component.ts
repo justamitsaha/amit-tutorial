@@ -19,7 +19,6 @@ export class TutorialComponent implements OnInit {
       this.content = data.content;
       this.subjectHeader = data.content.topicHeader;
     });
-
   }
 
 }
