@@ -8,7 +8,7 @@ import { APICallService } from './apicall.service';
 })
 export class AppComponent {
   title = 'amit-tutorial';
-
+  show_sidebar: Boolean = false;
   side_bar_data: any;
   constructor(
     private apiCallService: APICallService
@@ -16,6 +16,10 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getSideBarData();
+  }
+
+  getNavBarStatus(navBarStatus: Boolean) {
+    this.show_sidebar = navBarStatus;
   }
   getSideBarData(): any {
     this.apiCallService.getSideBarData().subscribe(data => {

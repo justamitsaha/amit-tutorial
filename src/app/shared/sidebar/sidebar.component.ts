@@ -42,7 +42,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.data = this.navigation_data;
-    debugger;
   }
 
 }

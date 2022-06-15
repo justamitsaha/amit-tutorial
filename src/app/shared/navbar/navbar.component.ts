@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  @Output() hamburger_output = new EventEmitter<Boolean>();
   is_collapsed: boolean = false;
   panelOpenState = false;
   constructor() { }
@@ -14,11 +14,20 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeHamburger(): void {
+  // changeHamburger(): void {
+  //   if (this.is_collapsed == false) {
+  //     this.is_collapsed = true;
+  //   } else {
+  //     this.is_collapsed = false;
+  //   }
+  // }
+
+  changeHamburger() {
     if (this.is_collapsed == false) {
       this.is_collapsed = true;
     } else {
       this.is_collapsed = false;
     }
+    this.hamburger_output.emit(this.is_collapsed);
   }
 }
