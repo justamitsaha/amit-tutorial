@@ -11,7 +11,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home/welcome', component: HomeComponent },
-  { path: 'java/tutorials', component: TutorialComponent },
+  { path: 'java/tutorials/:topic', component: TutorialComponent },
 ];
 
 @NgModule({
