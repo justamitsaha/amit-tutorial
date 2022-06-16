@@ -14,7 +14,7 @@ export class APICallService {
   getData(uri: String) {
     console.log(uri);
     let response = new Subject<any>();
-    this.http.get("http://localhost:4200/assets/data.json").subscribe((data) => {
+    this.http.get("http://localhost:4200/assets/json" + uri + ".json").subscribe((data) => {
       response.next(data);
     }, (error) => {
       response.error(error);
@@ -24,7 +24,7 @@ export class APICallService {
 
   getSideBarData() {
     let response = new Subject<any>();
-    this.http.get("http://localhost:4200/assets/sidebar.json").subscribe((data) => {
+    this.http.get("http://localhost:4200/assets/json/sidebar.json").subscribe((data) => {
       response.next(data);
     }, (error) => {
       response.error(error);
