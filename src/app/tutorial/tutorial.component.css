@@ -1,0 +1,11 @@
+.mat-slide-toggle {
+    padding-top: 0.5rem;
+}
+
+.badge bg-secondary {
+    font-family: 'Oxygen', sans-serif !important;
+}
+
+.code-block {
+    background-color: aliceblue;
+}

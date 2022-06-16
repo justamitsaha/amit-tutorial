@@ -5,7 +5,19 @@ body {
     height: 100%;
 }
 
+
+@font-face {
+    font-family: "Oxygen";
+    src: local("Oxygen"), url(./assets/fonts/Oxygen/Oxygen-Regular.ttf) format("truetype");
+}
+
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Oxygen', sans-serif !important;
+    background-color: #ffffff;
+}
+
+.container {
+    background-color: aliceblue !important;
+    padding-bottom: 2rem;
 }

@@ -9,9 +9,6 @@
                         {
                             "name": "Basic",
                             "url": "/java/tutorials/exceptionHandellingBasic"
-                        },
-                        {
-                            "name": "Try with resource"
                         }
                     ]
                 }

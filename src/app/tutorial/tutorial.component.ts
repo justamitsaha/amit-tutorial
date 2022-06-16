@@ -11,6 +11,7 @@ export class TutorialComponent implements OnInit {
 
   content: any;
   subjectHeader: String = "";
+  isChecked: boolean = false;
   constructor(
     private apiCallService: APICallService,
     private route: ActivatedRoute

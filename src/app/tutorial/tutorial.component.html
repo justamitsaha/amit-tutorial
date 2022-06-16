@@ -1,5 +1,14 @@
 <div class="container" *ngIf="!!content">
-    <h1><span class="badge bg-secondary">{{content.topicHeader}}</span></h1>
+    <div class=" row">
+        <div class="col-sm-8">
+            <h1><span class="badge bg-secondary">{{content.topicHeader}}</span></h1>
+        </div>
+        <div class="col-sm-2">
+            <mat-slide-toggle [checked]="false" class="custom-font-class"> Switch to Tutorial </mat-slide-toggle>
+        </div>
+    </div>
+
+
     <div class="card" *ngFor="let cardContent of content.cardContentList">
         <div class="card-body">
             <h2 class="card-title">{{cardContent.cardHeader}}</h2>
@@ -7,7 +16,7 @@
                 <p class="card-text">{{text}}</p>
             </div>
             <div class="d-flex">
-                <div class="p-2 flex-fill fw-bold fst-italic" *ngFor="let code of cardContent.cardCode">
+                <div class="p-2 flex-fill fw-bold fst-italic code-block" *ngFor="let code of cardContent.cardCode">
                     <code [innerHTML]=code.code>
                     </code>
                 </div>

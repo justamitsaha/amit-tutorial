@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppRoutingModule } from './app-routing.module';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +30,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     MatExpansionModule,
     MatTreeModule,
     MatIconModule,
+    MatSlideToggleModule,
     AppRoutingModule,
     HttpClientModule
   ],
