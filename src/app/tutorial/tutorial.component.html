@@ -4,7 +4,8 @@
             <h1><span class="badge bg-secondary">{{content.topicHeader}}</span></h1>
         </div>
         <div class="col-sm-2">
-            <mat-slide-toggle [checked]="false" class="custom-font-class"> Switch to Tutorial </mat-slide-toggle>
+            <mat-slide-toggle [checked]="false" class="custom-font-class" (click)="changeView($event)"> Switch to
+                Tutorial </mat-slide-toggle>
         </div>
     </div>
 

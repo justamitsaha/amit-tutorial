@@ -13,6 +13,7 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 
@@ -22,7 +23,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     NavbarComponent,
     TutorialComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

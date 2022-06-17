@@ -21,3 +21,15 @@ body {
     background-color: aliceblue !important;
     padding-bottom: 2rem;
 }
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #ffffff !important;
+}
+
+.mat-slide-toggle-thumb {
+    background-color: black !important;
+}
+
+.mat-slide-toggle {
+    padding-top: 0.5rem;
+}

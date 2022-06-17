@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { HomeComponent } from './home/home.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   { path: 'home/welcome', component: HomeComponent },
   { path: 'java/tutorials/:topic', component: TutorialComponent },
+  { path: 'java/quiz/:topic', component: QuizComponent }
 ];
 
 @NgModule({

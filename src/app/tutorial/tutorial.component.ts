@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { APICallService } from '../apicall.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class TutorialComponent implements OnInit {
   isChecked: boolean = false;
   constructor(
     private apiCallService: APICallService,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -23,6 +22,12 @@ export class TutorialComponent implements OnInit {
       this.content = data.content;
       this.subjectHeader = data.content.topicHeader;
     });
+  }
+
+  changeView(event: any) {
+    let nextURI = (this.router.url).replace('tutorials', 'quiz');
+    this.router.navigate([nextURI]);
+    console.log(event);
   }
 
 }
