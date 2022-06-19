@@ -3,6 +3,7 @@
         "questionList": [
             {
                 "question": "This is a question?",
+                "code": "try{<br>System.out.println();<br>}catch(Exceptione){<br>}",
                 "options": [
                     "option A",
                     "option B",
@@ -14,6 +15,7 @@
             },
             {
                 "question": "This is a question?",
+                "code": "",
                 "options": [
                     "option A",
                     "option B",
