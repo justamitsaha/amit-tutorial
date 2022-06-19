@@ -10,9 +10,34 @@
     </div>
 
 
-    <div class="card">
-        <div class="card-body">
-
+    <div class="card" *ngIf="!!content">
+        <div class="card-body" *ngFor="let question of content.questionList">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="question.isCorect">
+                <strong>Yay!</strong> {{question.reason}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="question.isInCorect">
+                <strong>OOPS!</strong> {{question.reason}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 pb-2">{{question.question}}</div>
+            </div>
+            <form>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let option of question.options">
+                        <input class="form-check-input" type="radio" name="checkOption" id="checkOption"
+                            (click)=answerSelected(option,question)>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            {{option}}
+                        </label>
+                    </li>
+                </ul>
+                <div class="d-grid gap-2  pt-2">
+                    <button class="btn btn-primary btn-dark bg-dark" [disabled]="!question.enabled" type="button"
+                        (click)="submitAnswer(question)">Button</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

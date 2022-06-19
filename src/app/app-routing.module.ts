@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home/welcome', component: HomeComponent },
-  { path: 'java/tutorials/:topic', component: TutorialComponent },
-  { path: 'java/quiz/:topic', component: QuizComponent }
+  { path: 'java/tutorials/:topic/:subtopic', component: TutorialComponent },
+  { path: 'java/quiz/:topic/:subtopic', component: QuizComponent }
 ];
 
 @NgModule({

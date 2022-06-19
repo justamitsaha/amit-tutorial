@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +35,8 @@ import { QuizComponent } from './quiz/quiz.component';
     MatIconModule,
     MatSlideToggleModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

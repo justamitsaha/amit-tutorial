@@ -12,9 +12,8 @@ export class APICallService {
   ) { }
 
   getData(uri: String) {
-    console.log(uri);
     let response = new Subject<any>();
-    this.http.get("http://localhost:4200/assets/json" + uri + ".json").subscribe((data) => {
+    this.http.get("http://localhost:4200/assets/json" + uri).subscribe((data) => {
       response.next(data);
     }, (error) => {
       response.error(error);

@@ -18,7 +18,7 @@ export class TutorialComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.apiCallService.getData(this.router.url).subscribe(data => {
+    this.apiCallService.getData(this.router.url + ".json").subscribe(data => {
       this.content = data.content;
       this.subjectHeader = data.content.topicHeader;
     });
@@ -29,5 +29,4 @@ export class TutorialComponent implements OnInit {
     this.router.navigate([nextURI]);
     console.log(event);
   }
-
 }
