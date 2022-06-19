@@ -1,5 +1,5 @@
 <app-navbar (hamburger_output)="getNavBarStatus($event)"></app-navbar>
-<div class=" row">
+<div class="row width-control">
     <div class="col-sm-2">
         <app-sidebar [navigation_data]="side_bar_data" *ngIf="!!side_bar_data && !!show_sidebar"></app-sidebar>
     </div>
