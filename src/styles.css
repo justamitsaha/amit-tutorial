@@ -33,3 +33,7 @@ body {
 .mat-slide-toggle {
     padding-top: 0.5rem;
 }
+
+.image-style {
+    max-height: 28rem;
+}

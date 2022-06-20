@@ -5,3 +5,7 @@
 .code-block {
     background-color: aliceblue;
 }
+
+.card-text {
+    margin-bottom: 0.35rem;
+}

@@ -2,28 +2,28 @@
     "content": {
         "questionList": [
             {
-                "question": "This is a question?",
-                "code": "try{<br>System.out.println();<br>}catch(Exceptione){<br>}",
+                "question": "What will below code print at the end?",
+                "code": "try {<br> System.out.println(1);<br> System.exit(0);<br> System.out.println(2);<br> } finally {<br> System.out.println(3);<br> }",
                 "options": [
-                    "option A",
-                    "option B",
-                    "option C",
-                    "option D"
+                    "1",
+                    "2",
+                    "3",
+                    "Exception"
                 ],
-                "answer": "option D",
-                "reason": "This is the answer"
+                "answer": "1",
+                "reason": "Normally Finally block executes at end but due to System.exit(0) execution will stop"
             },
             {
-                "question": "This is a question?",
-                "code": "",
+                "question": "What will goHome return?",
+                "code": "static int goHome() {<br>  try {<br> Exception e = new Exception();<br> throw e;<br> return -1;<br> } catch (Exception e) {<br> return -2;<br> } finally {<br> return -3;<br> }",
                 "options": [
-                    "option A",
-                    "option B",
-                    "option C",
-                    "option D"
+                    "1",
+                    "2",
+                    "3",
+                    "compilation failure"
                 ],
-                "answer": "option A",
-                "reason": "This is the answer"
+                "answer": "compilation failure",
+                "reason": "Return after throw is unreachable and will not compile"
             }
         ]
     }
