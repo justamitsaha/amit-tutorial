@@ -4,11 +4,15 @@
             "name": "Java",
             "children": [
                 {
-                    "name": "Exception Handelling",
+                    "name": "Exception Handling",
                     "children": [
                         {
                             "name": "Basic",
-                            "url": "/java/tutorials/exception/exceptionHandellingBasic"
+                            "url": "/java/tutorials/exception/exceptionHandlingBasic"
+                        },
+                        {
+                            "name": "Try With Resource",
+                            "url": "/java/tutorials/exception/tryWithResource"
                         }
                     ]
                 }

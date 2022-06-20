@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { APICallService } from '../apicall.service';
 
 @Component({
@@ -14,13 +14,16 @@ export class TutorialComponent implements OnInit {
   isChecked: boolean = false;
   constructor(
     private apiCallService: APICallService,
-    private router: Router
+    private router: Router,
+    private activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.apiCallService.getData(this.router.url + ".json").subscribe(data => {
-      this.content = data.content;
-      this.subjectHeader = data.content.topicHeader;
+    this.activeRoute.params.subscribe(routeParams => {
+      this.apiCallService.getData(this.router.url + ".json").subscribe(data => {
+        this.content = data.content;
+        this.subjectHeader = data.content.topicHeader;
+      });
     });
   }
 
