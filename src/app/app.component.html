@@ -1,7 +1,8 @@
-<app-navbar (hamburger_output)="getNavBarStatus($event)"></app-navbar>
+<app-navbar (hamburger_output)="getNavBarStatus($event)" [sidebar_state]="show_sidebar"></app-navbar>
 <div class="row width-control">
     <div class="col-sm-2">
-        <app-sidebar [navigation_data]="side_bar_data" *ngIf="!!side_bar_data && !!show_sidebar"></app-sidebar>
+        <app-sidebar [navigation_data]="side_bar_data" (side_barclicked)="sideBarClicked()" *ngIf=" !!side_bar_data
+            && !!show_sidebar"></app-sidebar>
     </div>
     <div class="col-sm-8">
         <router-outlet></router-outlet>

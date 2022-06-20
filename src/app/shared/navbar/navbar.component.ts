@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,21 +6,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Output() hamburger_output = new EventEmitter<Boolean>();
+  @Output() hamburger_output = new EventEmitter<boolean>();
+  @Input() sidebar_state: boolean = false;
   is_collapsed: boolean = false;
   panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.is_collapsed = this.sidebar_state;
   }
 
-  // changeHamburger(): void {
-  //   if (this.is_collapsed == false) {
-  //     this.is_collapsed = true;
-  //   } else {
-  //     this.is_collapsed = false;
-  //   }
-  // }
+  ngOnChanges(changes: any) {
+    this.is_collapsed = this.sidebar_state;
+  }
 
   changeHamburger() {
     if (this.is_collapsed == false) {
@@ -29,5 +27,10 @@ export class NavbarComponent implements OnInit {
       this.is_collapsed = false;
     }
     this.hamburger_output.emit(this.is_collapsed);
+  }
+
+  hideHamburger() {
+    this.is_collapsed = false;
+    this.hamburger_output.emit(false);
   }
 }

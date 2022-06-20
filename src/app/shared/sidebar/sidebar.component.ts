@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
@@ -11,7 +11,7 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 
 export class SidebarComponent implements OnInit {
-
+  @Output() side_barclicked = new EventEmitter<Boolean>();
   @Input() navigation_data: any;
   TREE_DATA: any = [
     {
@@ -42,6 +42,10 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.data = this.navigation_data;
+  }
+
+  clickSideBar(): void {
+    this.side_barclicked.emit(true);
   }
 
 }

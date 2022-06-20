@@ -8,7 +8,7 @@ import { APICallService } from './apicall.service';
 })
 export class AppComponent {
   title = 'amit-tutorial';
-  show_sidebar: Boolean = false;
+  show_sidebar: boolean = false;
   side_bar_data: any;
   constructor(
     private apiCallService: APICallService
@@ -18,13 +18,17 @@ export class AppComponent {
     this.getSideBarData();
   }
 
-  getNavBarStatus(navBarStatus: Boolean) {
+  getNavBarStatus(navBarStatus: boolean) {
     this.show_sidebar = navBarStatus;
   }
   getSideBarData(): any {
     this.apiCallService.getSideBarData().subscribe(data => {
       return this.side_bar_data = data.content;
     });
+  }
+
+  sideBarClicked(): void {
+    this.show_sidebar = false;
   }
 }
 
