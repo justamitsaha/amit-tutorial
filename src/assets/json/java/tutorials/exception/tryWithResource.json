@@ -1,39 +1,39 @@
 {
     "content": {
-        "topicHeader": "Exception Handling",
-        "cardContentList": [
+        "pageHeader": "Exception Handling",
+        "topicList": [
             {
-                "cardHeader": "Try with Resource",
-                "cardMsg": [
+                "topicHeader": "Try with Resource",
+                "topicMsgList": [
                     {
-                        "text": "Try-with-resources statement automatically close all resources opened in a try clause.Behind the scenes, the compiler replaces a try-with-resources block with a try and finally block. We refer to this hidden finally block as an implicit finally block since it is created and used by the compiler automatically. We can use try-with-resource for only those classes which implement <b>java.lang.AutoCloseable</b> class"
+                        "topicText": "Try-with-resources statement automatically close all resources opened in a try clause.Behind the scenes, the compiler replaces a try-with-resources block with a try and finally block. We refer to this hidden finally block as an implicit finally block since it is created and used by the compiler automatically. We can use try-with-resource for only those classes which implement <b>java.lang.AutoCloseable</b> class"
                     },
                     {
-                        "cardCode": [
+                        "cardCodeList": [
                             {
                                 "code": "try (FileInputStream is = new FileInputStream( &quot;file.txt&quot;)){<br> // Read file data<br> }",
-                                "text": "Catch block is optional as finally is automatically inserted"
+                                "textDesc": "Catch block is optional as finally is automatically inserted"
                             },
                             {
                                 "code": "try (FileInputStream ab = new FileInputStream(&quot;myfile.txt&quot;);<br> FileInputStream cd = new FileInputStream(&quot;myfile.txt&quot;)) {<br> }",
-                                "text": "Can add multiple resource object"
+                                "textDesc": "Can add multiple resource object"
                             },
                             {
                                 "code": "try (Scanner s = new Scanner(System.in)) {<br> s.nextLine();<br> } catch (Exception e) {<br> s.nextInt(); <br> }",
-                                "text": "Won't compile as Scanner doesn't implement <b>java.lang.AutoCloseable</b>"
+                                "textDesc": "Won't compile as Scanner doesn't implement <b>java.lang.AutoCloseable</b>"
                             }
                         ]
                     }
                 ]
             },
             {
-                "cardHeader": "Auto Closable",
-                "cardMsg": [
+                "topicHeader": "Auto Closable",
+                "topicMsgList": [
                     {
-                        "text": "Resources Class implementing Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call."
+                        "topicText": "Resources Class implementing Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call."
                     },
                     {
-                        "text": "A try‐with‐resources statement can include multiple resources, which are closed in the reverse order in which they are declared "
+                        "topicText": "A try‐with‐resources statement can include multiple resources, which are closed in the reverse order in which they are declared "
                     }
                 ]
             }
