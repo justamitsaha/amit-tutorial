@@ -21,9 +21,9 @@
                 <div class="d-flex" *ngIf="topicMsg.cardCodeList">
                     <div class="p-2 flex-fill fw-bold fst-italic code-block"
                         *ngFor="let cardCode of topicMsg.cardCodeList">
-                        <p class="card-text" [innerHTML]=cardCode.textDesc></p>
                         <code [innerHTML]=cardCode.code>
                         </code>
+                        <p class="card-text" [innerHTML]=cardCode.textDesc></p>
                     </div>
                 </div>
             </div>

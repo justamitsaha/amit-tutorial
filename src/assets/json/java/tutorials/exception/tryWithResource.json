@@ -6,9 +6,7 @@
                 "topicHeader": "Try with Resource",
                 "topicMsgList": [
                     {
-                        "topicText": "Try-with-resources statement automatically close all resources opened in a try clause.Behind the scenes, the compiler replaces a try-with-resources block with a try and finally block. We refer to this hidden finally block as an implicit finally block since it is created and used by the compiler automatically. We can use try-with-resource for only those classes which implement <b>java.lang.AutoCloseable</b> class"
-                    },
-                    {
+                        "topicText": "Try-with-resources statement automatically close all resources opened in a try clause.Behind the scenes, the compiler replaces a try-with-resources block with a try and finally block. We refer to this hidden finally block as an implicit finally block since it is created and used by the compiler automatically. We can use try-with-resource for only those classes which implement <b>java.lang.AutoCloseable</b> class",
                         "cardCodeList": [
                             {
                                 "code": "try (FileInputStream is = new FileInputStream( &quot;file.txt&quot;)){<br> // Read file data<br> }",
@@ -30,10 +28,40 @@
                 "topicHeader": "Auto Closable",
                 "topicMsgList": [
                     {
-                        "topicText": "Resources Class implementing Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call."
+                        "topicText": "Resources Class implementing Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call. What do you think will happen with below code",
+                        "cardCodeList": [
+                            {
+                                "code": "class MyFileReader implements AutoCloseable {<br>  private String tag;<br><br> public MyFileReader(String tag) {<br> System.out.println(&quot;constructor&quot;);<br> this.tag = tag;<br> }<br><br> @Override<br> public void close() {<br> System.out.println(&quot;Closed: &quot; + tag);<br> }<br>}"
+                            },
+                            {
+                                "code": "public static void tryWithResource1() {<br>  try (var bookReader = new MyFileReader(&quot;monkey&quot;)) {<br>  System.out.println(&quot;Try Block&quot;);<br>  } finally {<br>  System.out.println(&quot;Finally Block&quot;);<br>  }<br>  }",
+                                "textDesc": "First Constructor will be executed, then the try block, then implicit closable then catch. So constructor --> Try Block --> Closed: monkey --> Finally Block"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Multiple Try with resource",
+                "topicMsgList": [
+                    {
+                        "topicText": "A try-with-resources statement can include multiple resources, which are closed in the reverse order in which they are declared. So in below code after try block 6, 5 and 4 are printed followed by finally block.",
+                        "cardCodeList": [
+                            {
+                                "code": "final var bookReader = new MyFileReader(&quot;4&quot;);<br> MyFileReader movieReader = new MyFileReader(&quot;6&quot;);<br> try (bookReader; <br>var tvReader = new MyFileReader(&quot;5&quot;); <br> movieReader) {<br> System.out.println(&quot;Try Block&quot;);<br> } finally {<br>System.out.println(&quot;Finally Block&quot;);<br> }"
+                            }
+                        ]
                     },
                     {
-                        "topicText": "A try‐with‐resources statement can include multiple resources, which are closed in the reverse order in which they are declared "
+                        "topicText": "Starting with Java 9, it is possible to use resources declared prior to the try-with-resources statement, provided they are marked final or effectively final"
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "Path path2 = null;<br>  var writer = Files.newBufferedWriter(path2);<br>  try (writer2) { // DOES NOT COMPILE<br>  writer2.append(&quot;Welcome to the zoo!&quot;);<br>",
+                                "textDesc": "We have not declared writer as final but since the value is not changing it treated as one."
+                            }
+                        ]
                     }
                 ]
             }
