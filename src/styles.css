@@ -37,3 +37,11 @@ body {
 .image-style {
     max-height: 28rem;
 }
+
+code {
+    color: #f11d07;
+}
+
+.custom_button {
+    font-size: small !important;
+}

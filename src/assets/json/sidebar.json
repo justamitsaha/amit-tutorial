@@ -4,15 +4,28 @@
             "name": "Java",
             "children": [
                 {
+                    "name": "Basic",
+                    "children": [
+                        {
+                            "name": "Blocks Execution Order",
+                            "url": "/java/tutorials/basic/blocks"
+                        }
+                    ]
+                },
+                {
                     "name": "Exception Handling",
                     "children": [
                         {
-                            "name": "Basic",
+                            "name": "Exception Basic",
                             "url": "/java/tutorials/exception/exceptionHandlingBasic"
                         },
                         {
                             "name": "Try With Resource",
                             "url": "/java/tutorials/exception/tryWithResource"
+                        },
+                        {
+                            "name": "Custom Exception",
+                            "url": "/java/tutorials/exception/customException"
                         }
                     ]
                 }

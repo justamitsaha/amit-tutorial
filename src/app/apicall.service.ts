@@ -11,6 +11,16 @@ export class APICallService {
     private http: HttpClient
   ) { }
 
+  private pageData: any;
+
+  getPageData(): any {
+    return this.pageData
+  }
+
+  setPageData(data: any): void {
+    this.pageData = data;
+  }
+
   getData(uri: String) {
     let response = new Subject<any>();
     this.http.get("http://localhost:4200/assets/json" + uri).subscribe((data) => {

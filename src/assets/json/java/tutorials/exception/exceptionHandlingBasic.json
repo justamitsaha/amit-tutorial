@@ -50,10 +50,10 @@
                         "topicText": "Try block must have a catch or finally",
                         "cardCodeList": [
                             {
-                                "code": "try{<br>System.out.println();<br>}catch(Exception e){<br>}"
+                                "code": "try{<br>&nbsp  System.out.println();<br>}catch(Exception e){<br>}"
                             },
                             {
-                                "code": "try{<br>System.out.println();<br>}finally{<br>}"
+                                "code": "try{<br>&nbsp  System.out.println();<br>}finally{<br>}"
                             }
                         ]
                     },
@@ -61,11 +61,11 @@
                         "topicText": "While using multiple exception SuperClass mustn't precede Subclass as in that case Subclass will never be executed. Also for checked exception need a code which extends Checked exception otherwise we can't catch it or it will throw error. See below.",
                         "cardCodeList": [
                             {
-                                "code": "try{<br>}catch(IllegalArgumentException e){<br>}catch(NumberFormatException e){<br>} <br> <br> try{<br>throw new IOException();<br>}catch(FileNotFoundException|IOException e){}",
+                                "code": "try{<br>}catch(IllegalArgumentException e){<br>}catch(NumberFormatException e){<br>} <br> <br> try{<br>&nbsp   throw new IOException();<br>}catch(FileNotFoundException|IOException e){}",
                                 "textDesc": "Won't compile"
                             },
                             {
-                                "code": "try{<br>}catch(NumberFormatException e){<br>}catch(IllegalArgumentException e){<br>} <br> <br> try {<br> throw new IOException();<br> } catch (FileNotFoundException | IOException e) {}",
+                                "code": "try{<br>}catch(NumberFormatException e){<br>}catch(IllegalArgumentException e){<br>} <br> <br> try {<br>&nbsp  throw new IOException();<br> } catch (FileNotFoundException | IOException e) {}",
                                 "textDesc": "Will Compile"
                             }
                         ]

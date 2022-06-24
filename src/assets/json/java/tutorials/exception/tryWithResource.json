@@ -17,7 +17,7 @@
                                 "textDesc": "Can add multiple resource object"
                             },
                             {
-                                "code": "try (Scanner s = new Scanner(System.in)) {<br> s.nextLine();<br> } catch (Exception e) {<br> s.nextInt(); <br> }",
+                                "code": "try (Scanner s = new Scanner(System.in)) {<br>&nbsp    s.nextLine();<br> } catch (Exception e) {<br>&nbsp   s.nextInt(); <br> }",
                                 "textDesc": "Won't compile as Scanner doesn't implement <b>java.lang.AutoCloseable</b>"
                             }
                         ]
@@ -28,14 +28,15 @@
                 "topicHeader": "Auto Closable",
                 "topicMsgList": [
                     {
-                        "topicText": "Resources Class implementing Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call. What do you think will happen with below code",
+                        "topicText": "Those resources Class which implement Closable or AutoClosable can be used for try with resources. The class needs to override close() method which is called during implicit finally call. What do you think will happen with below code",
                         "cardCodeList": [
                             {
-                                "code": "class MyFileReader implements AutoCloseable {<br>  private String tag;<br><br> public MyFileReader(String tag) {<br> System.out.println(&quot;constructor&quot;);<br> this.tag = tag;<br> }<br><br> @Override<br> public void close() {<br> System.out.println(&quot;Closed: &quot; + tag);<br> }<br>}"
+                                "code": "class MyFileReader implements AutoCloseable {<br>&nbsp   private String tag;<br><br>&nbsp   public MyFileReader(String tag) {<br>&nbsp   &nbsp   System.out.println(&quot;constructor&quot;);<br>&nbsp   &nbsp   this.tag = tag;<br>&nbsp   }<br><br>&nbsp   @Override<br>&nbsp   public void close() {<br>&nbsp   &nbsp   System.out.println(&quot;Closed: &quot; + tag);<br>&nbsp   }<br>}",
+                                "textDesc": "First Constructor will be executed, then the try block, then implicit closable then catch."
                             },
                             {
-                                "code": "public static void tryWithResource1() {<br>  try (var bookReader = new MyFileReader(&quot;monkey&quot;)) {<br>  System.out.println(&quot;Try Block&quot;);<br>  } finally {<br>  System.out.println(&quot;Finally Block&quot;);<br>  }<br>  }",
-                                "textDesc": "First Constructor will be executed, then the try block, then implicit closable then catch. So constructor --> Try Block --> Closed: monkey --> Finally Block"
+                                "code": "public static void tryWithResource1() {<br>&nbsp   try (var bookReader = new MyFileReader(&quot;monkey&quot;)) {<br>&nbsp   &nbsp   System.out.println(&quot;Try Block&quot;);<br>&nbsp   } finally {<br>&nbsp   &nbsp   System.out.println(&quot;Finally Block&quot;);<br>&nbsp   }<br>}",
+                                "textDesc": "So final output constructor --> Try Block --> Closed: monkey --> Finally Block"
                             }
                         ]
                     }
@@ -48,7 +49,7 @@
                         "topicText": "A try-with-resources statement can include multiple resources, which are closed in the reverse order in which they are declared. So in below code after try block 6, 5 and 4 are printed followed by finally block.",
                         "cardCodeList": [
                             {
-                                "code": "final var bookReader = new MyFileReader(&quot;4&quot;);<br> MyFileReader movieReader = new MyFileReader(&quot;6&quot;);<br> try (bookReader; <br>var tvReader = new MyFileReader(&quot;5&quot;); <br> movieReader) {<br> System.out.println(&quot;Try Block&quot;);<br> } finally {<br>System.out.println(&quot;Finally Block&quot;);<br> }"
+                                "code": "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;final var bookReader = new MyFileReader(&quot;4&quot;);<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;MyFileReader movieReader = new MyFileReader(&quot;6&quot;);<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;try (bookReader; var tvReader = new MyFileReader(&quot;5&quot;); movieReader) {<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Try Block&quot;);<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;} finally {<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Finally Block&quot;);<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}"
                             }
                         ]
                     },
@@ -58,8 +59,16 @@
                     {
                         "cardCodeList": [
                             {
-                                "code": "Path path2 = null;<br>  var writer = Files.newBufferedWriter(path2);<br>  try (writer2) { // DOES NOT COMPILE<br>  writer2.append(&quot;Welcome to the zoo!&quot;);<br>",
+                                "code": "Path path = null;<br> var writer = Files.newBufferedWriter(path);<br> try (writer) {<br>&nbsp  writer.append(&quot;Welcome to the zoo!&quot;);<br> }",
                                 "textDesc": "We have not declared writer as final but since the value is not changing it treated as one."
+                            },
+                            {
+                                "code": "Path path = null;<br> var writer = Files.newBufferedWriter(path);<br> try (writer) {<br>&nbsp  writer.append(&quot;Welcome to the zoo!&quot;);<br> } <br>writer = null;",
+                                "textDesc": "Here since we are changing the reference to writer2 object it no longer remains final and will not compile"
+                            },
+                            {
+                                "code": "Path path = null;<br> var writer = Files.newBufferedWriter(path);<br> try (writer) {<br>&nbsp  writer.append(&quot;Welcome to the zoo!&quot;);<br> } <br>writer.append(&quotThis write will fail!&quot);;",
+                                "textDesc": "Here writer object is still final since object reference is not changed, but since we are appending to file already closed it will throw IO exception"
                             }
                         ]
                     }

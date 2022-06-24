@@ -12,6 +12,8 @@ export class TutorialComponent implements OnInit {
   content: any;
   subjectHeader: String = "";
   isChecked: boolean = false;
+  prev_page: any;
+  next_page: any;
   constructor(
     private apiCallService: APICallService,
     private router: Router,
@@ -21,8 +23,21 @@ export class TutorialComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe(routeParams => {
       this.apiCallService.getData(this.router.url + ".json").subscribe(data => {
+        let page_list = this.apiCallService.getPageData();
         this.content = data.content;
         this.subjectHeader = data.content.topicHeader;
+        for (var i = 0; i < page_list.length; i++) {
+          if (page_list[i].url === this.router.url) {
+            this.prev_page = null;
+            this.next_page = null;
+            if (i != 0) {
+              this.prev_page = page_list[i - 1];
+            }
+            if (i != (page_list.length + 1)) {
+              this.next_page = page_list[i + 1];
+            }
+          }
+        }
       });
     });
   }
