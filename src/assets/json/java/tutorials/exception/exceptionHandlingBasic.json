@@ -6,10 +6,12 @@
                 "topicHeader": "Types of exception",
                 "topicMsgList": [
                     {
-                        "topicText": "The <b>java.lang.Throwable</b> class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error. The hierarchy of Java Exception classes is given below:"
-                    },
-                    {
-                        "img": "../../../assets/json/java/tutorials/exception/Exception-Handling-Basic.png"
+                        "topicText": "The <b>java.lang.Throwable</b> class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error. The hierarchy of Java Exception classes is given below:",
+                        "cardCodeList": [
+                            {
+                                "img": "../../../assets/json/java/tutorials/exception/Exception-Handling-Basic.png"
+                            }
+                        ]
                     },
                     {
                         "topicText": "Based on this hierarchy, Exceptions can be classified in 3 parts"

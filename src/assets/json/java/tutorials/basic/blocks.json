@@ -1,24 +1,34 @@
 {
     "content": {
-        "pageHeader": "Exception Handling",
+        "pageHeader": "Java Basics",
         "topicList": [
             {
-                "topicHeader": "Try with Resource",
+                "topicHeader": "Blocks and order of execution",
                 "topicMsgList": [
                     {
-                        "topicText": "Try-with-resources statement automatically close all resources opened in a try clause.Behind the scenes, the compiler replaces a try-with-resources block with a try and finally block. We refer to this hidden finally block as an implicit finally block since it is created and used by the compiler automatically. We can use try-with-resource for only those classes which implement <b>java.lang.AutoCloseable</b> class",
+                        "topicText": "A block of code is a code in a class which is in side {} but not any method. It will only compile when kept inside a {}. It executes when the class is instantiated and constructor is called",
                         "cardCodeList": [
                             {
-                                "code": "try (FileInputStream is = new FileInputStream( &quot;file.txt&quot;)){<br> // Read file data<br> }",
-                                "textDesc": "Catch block is optional as finally is automatically inserted"
+                                "code": "public class Bird {<br />&nbsp;&nbsp; &nbsp;String name;<br /> &nbsp;&nbsp; &nbsp;{<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Code Block&quot; + name);<br /> &nbsp;&nbsp; &nbsp;}<br /> <br /> &nbsp;&nbsp; &nbsp;{<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;for (int i = 0; i &lt; 5; i++) {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Counter &quot; + i);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;}<br /> }<br /> Bird bird = new Bird()",
+                                "textDesc": "The Block will execute only when the constructor is called i.e. new "
                             },
                             {
-                                "code": "try (FileInputStream ab = new FileInputStream(&quot;myfile.txt&quot;);<br> FileInputStream cd = new FileInputStream(&quot;myfile.txt&quot;)) {<br> }",
-                                "textDesc": "Can add multiple resource object"
-                            },
+                                "code": "&nbsp;&nbsp; &nbsp;public static void testMethod() {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Feathers Bal&quot; +bird.name);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;}",
+                                "textDesc": "Since the code is Class body and not in method and neither in {} it will not compile."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Order Of Execution",
+                "topicMsgList": [
+                    {
+                        "topicText": "Fields and instance initializer blocks are run in the order in which they appear in the file. The constructor runs after all fields and instance initializer blocks have run.",
+                        "cardCodeList": [
                             {
-                                "code": "try (Scanner s = new Scanner(System.in)) {<br>&nbsp    s.nextLine();<br> } catch (Exception e) {<br>&nbsp   s.nextInt(); <br> }",
-                                "textDesc": "Won't compile as Scanner doesn't implement <b>java.lang.AutoCloseable</b>"
+                                "code": "public class Chick {<br /> &nbsp;&nbsp; private String name = &quot;Fluffy&quot;;<br /> &nbsp;&nbsp; {<br /> &nbsp;&nbsp; &nbsp; &nbsp;System.out.println(&quot;setting field&quot;);<br /> &nbsp;&nbsp; }<br /> <br /> &nbsp;&nbsp; public Chick() {<br /> &nbsp;&nbsp; &nbsp; &nbsp;name = &quot;Tiny&quot;;<br /> &nbsp;&nbsp; &nbsp; &nbsp;System.out.println(&quot;setting constructor&quot;);<br /> &nbsp;&nbsp; }<br /><br /> &nbsp;&nbsp; public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp; &nbsp;Chick chick = new Chick();<br /> &nbsp;&nbsp; &nbsp; &nbsp;System.out.println(chick.name);<br /> &nbsp;&nbsp; }<br /> }",
+                                "textDesc": "The code initializer will print first, then constructor the the main methods println()."
                             }
                         ]
                     }

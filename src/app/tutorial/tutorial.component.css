@@ -1,5 +1,6 @@
 .badge bg-secondary {
-    font-family: 'Oxygen', sans-serif !important;
+    /* font-family: 'Oxygen', sans-serif !important; */
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .code-block {
@@ -13,4 +14,5 @@
 
 .card-title {
     margin-bottom: 0 !important;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
 }

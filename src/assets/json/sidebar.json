@@ -9,6 +9,10 @@
                         {
                             "name": "Blocks Execution Order",
                             "url": "/java/tutorials/basic/blocks"
+                        },
+                        {
+                            "name": "Primitives",
+                            "url": "/java/tutorials/basic/primitives"
                         }
                     ]
                 },
@@ -26,6 +30,19 @@
                         {
                             "name": "Custom Exception",
                             "url": "/java/tutorials/exception/customException"
+                        }
+                    ]
+                },
+                {
+                    "name": "Lambdas",
+                    "children": [
+                        {
+                            "name": "What is Lambda?",
+                            "url": "/java/tutorials/lambdas/lambdaBasic"
+                        },
+                        {
+                            "name": "Functional Interface",
+                            "url": "/java/tutorials/lambdas/functionalInterface"
                         }
                     ]
                 }

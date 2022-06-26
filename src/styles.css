@@ -13,7 +13,7 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Oxygen', sans-serif !important;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
     background-color: #ffffff;
 }
 
@@ -39,9 +39,18 @@ body {
 }
 
 code {
-    color: #f11d07;
+    color: #082946;
+    font-family: 'Oxygen', sans-serif !important;
 }
 
 .custom_button {
     font-size: small !important;
+}
+
+.comic-sans-font {
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.mat-tree-node {
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
