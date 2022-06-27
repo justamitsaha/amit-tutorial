@@ -20,7 +20,7 @@
                         ]
                     },
                     {
-                        "topicText": "<b>2 Consumer</b> : Returns nothing and has 1 input. Has abstract method <b>accept(T)</b>,You use a Consumer when you want to do something with a parameter but not return anything",
+                        "topicText": "<b>2 Consumer&lt;T&gt;</b> : Returns nothing and has 1 input. Has abstract method <b>accept(T)</b>,You use a Consumer when you want to do something with a parameter but not return anything",
                         "cardCodeList": [
                             {
                                 "code": "Consumer&lt;String&gt; c1 = System.out::println;<br /> Consumer&lt;String&gt; c2 = x -&gt; System.out.println(x);<br /> c1.accept(&quot;Annie&quot;);<br /> c2.accept(&quot;Annie&quot;);"
@@ -28,7 +28,7 @@
                         ]
                     },
                     {
-                        "topicText": "<b>3 BiConsumer</b> : Returns nothing and has 2 input. Has abstract method <b>accept(T,U)</b>",
+                        "topicText": "<b>3 BiConsumer&lt;T,U&gt;</b> : Returns nothing and has 2 input. Has abstract method <b>accept(T,U)</b>",
                         "cardCodeList": [
                             {
                                 "code": "&nbsp;&nbsp; &nbsp;var map = new HashMap&lt;String, Integer&gt;();<br /> &nbsp;&nbsp; &nbsp;BiConsumer&lt;String, Integer&gt; b1 = map::put;<br /> &nbsp;&nbsp; &nbsp;BiConsumer&lt;String, Integer&gt; b2 = (k, v) -&gt; map.put(k, v);<br /> &nbsp;&nbsp; &nbsp;b1.accept(&quot;chicken&quot;, 7);<br /> &nbsp;&nbsp; &nbsp;b2.accept(&quot;chick&quot;, 1);<br /> &nbsp;&nbsp; &nbsp;System.out.println(map);"

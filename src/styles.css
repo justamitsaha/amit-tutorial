@@ -14,11 +14,11 @@ body {
 body {
     margin: 0;
     font-family: "Comic Sans MS", cursive, sans-serif !important;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
 }
 
 .container {
-    background-color: aliceblue !important;
+    /* background-color: aliceblue !important; */
     padding-bottom: 2rem;
 }
 
