@@ -68,7 +68,7 @@
                         ]
                     },
                     {
-                        "topicText": "<b>8 UnaryOperator&lt;T,R&gt;</b> : Represents a function that accepts an argument and produces a result of same type. Has abstract method <b>T apply(T) </b>.",
+                        "topicText": "<b>8 UnaryOperator&lt;T&gt;</b> : Represents a function that accepts an argument and produces a result of same type. Has abstract method <b>T apply(T) </b>. This extends <b>Function</b> but the difference is that the return type and arguments are of same type as compared to Function.",
                         "cardCodeList": [
                             {
                                 "code": "UnaryOperator&lt;String&gt; u1 = String::toUpperCase;<br /> UnaryOperator&lt;String&gt; u2 = x -&gt; x.toUpperCase();<br /> System.out.println(u1.apply(&quot;chirp&quot;)); &nbsp;<br /> System.out.println(u2.apply(&quot;chirp&quot;)); &nbsp;"
@@ -76,7 +76,7 @@
                         ]
                     },
                     {
-                        "topicText": "<b>9 BinaryOperator&lt;T,T&gt;</b> : Represents a function that accepts an argument and produces a result of same type. Has abstract method <b>T apply(T) </b>.",
+                        "topicText": "<b>9 BinaryOperator&lt;T&gt;</b> : Represents a function that accepts an argument and produces a result of same type. Has abstract method <b>T apply(T) </b>. This extends <b>BiFunction</b> but the difference is that the return type and arguments are of same type as compared to BiFunction",
                         "cardCodeList": [
                             {
                                 "code": "BinaryOperator&lt;String&gt; b1 = String::concat;<br /> BinaryOperator&lt;String&gt; b2 = (firstString, secondString) -&gt; firstString.concat(secondString);<br /> System.out.println(b1.apply(&quot;baby &quot;, &quot;chick&quot;));<br /> System.out.println(b2.apply(&quot;baby &quot;, &quot;chick&quot;));"

@@ -1,0 +1,76 @@
+{
+    "content": {
+        "pageHeader": "Java Basics",
+        "topicList": [
+            {
+                "topicHeader": "What are primitives?",
+                "topicMsgList": [
+                    {
+                        "topicText": "Primitives represents simple values not object which can have complex Object oriented structure.Making the primitive types into objects would have degraded performance too much. Types of primitive."
+                    },
+                    {
+                        "topicText": "<b> byte </b>: 1 byte 8 bits 2^8 or - 128 to 127"
+                    },
+                    {
+                        "topicText": "<b> short </b>:  16 bit 2^16 -32,768 to 32,767"
+                    },
+                    {
+                        "topicText": "<b> int </b>: 32 bit 2^32 -2,147,483,648 to 2,147,483,647"
+                    },
+                    {
+                        "topicText": "<b> float </b>: 123.4f"
+                    },
+                    {
+                        "topicText": "<b> double </b>: 123.4f"
+                    },
+                    {
+                        "topicText": "<b> char  </b>: 16 bit similar to short"
+                    },
+                    {
+                        "topicText": "<b> boolean  </b>: true or false"
+                    },
+                    {
+                        "topicText": "The smallest integer type is byte, byte are especially useful when you are working with a stream of data from a network or file. They are also useful when you are working with raw binary data that may not be directly compatible with Java's other built-in types. Although you might think that using a byte or short would be more efficient than using an int in situations in which the larger range of an int is not needed, this may not be the case. The reason is that when byte and short values are used in an expression, they are promoted to int when the expression is evaluated"
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": ""
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "The type float specifies a single-precision value that uses 32 bits of storage.Double precision, as denoted by the double keyword, uses 64 bits to store a value. Single precision is faster on some processors and takes half as much space as double precision, but will become imprecise when the values are either very large or very small. Floating-point literals in Java default to double precision. All transcendental math functions, such as sin( ), cos( ), and sqrt( ), return double values. When you need to maintain accuracy over many iterative calculations, or are manipulating large-valued numbers, double is the best choice. ",
+                        "cardCodeList": [
+                            {
+                                "img": "../../../assets/json/java/tutorials/basic/precision.png"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Float requires f to be mentioned or F. For double its not mandatory but can add d or D. However if we don,t add it in expression then result will be off"
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "float f = 32.890880657f;<br />Prints 32.89088<br /> double g = 32.3224234123; <br /> Prints 32.3224234123"
+                            },
+                            {
+                                "code": "float b = 10/3;<br />Prints 3.0<br /> float c = 10/3F;<br />Prints 3.3333333<br />"
+                            },
+                            {
+                                "code": "double d = 10/3;<br />Prints 3.0<br /> double e = 10/3d;<br />Prints 3.3333333333333335"
+                            },
+                            {
+                                "code": "double d = 10/3;<br />Prints 3.0<br /> double e = 10/3d;<br />Prints 3.3333333333333335"
+                            },
+                            {
+                                "code": "double z = 2.3;<br /> Will compile<br /> float x = 2.3;<br /> Won&#039;t compile"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

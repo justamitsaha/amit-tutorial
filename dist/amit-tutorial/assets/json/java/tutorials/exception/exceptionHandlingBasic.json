@@ -1,0 +1,92 @@
+{
+    "content": {
+        "pageHeader": "Exception Handling",
+        "topicList": [
+            {
+                "topicHeader": "Types of exception",
+                "topicMsgList": [
+                    {
+                        "topicText": "The <b>java.lang.Throwable</b> class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error. The hierarchy of Java Exception classes is given below:",
+                        "cardCodeList": [
+                            {
+                                "img": "../../../assets/json/java/tutorials/exception/Exception-Handling-Basic.png"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Based on this hierarchy, Exceptions can be classified in 3 parts"
+                    },
+                    {
+                        "topicText": "<b>1 Error</b>: Errors are unchecked exceptions that extend the Error class. They are thrown by the JVM and should not be handled or declared. Errors are rare, but you might see these. StackOverflowError(recursive calls), OutOfMemoryError, VirtualMachineError, NoClassDefFoundError(code available at compile time but not run time)"
+                    },
+                    {
+                        "topicText": "<b>2 Checked Exceptions</b>: Checked exceptions have Exception in their hierarchy but not RuntimeException. It is must to handel these exceptions otherwise it will not compile, e.g. IOException, FileNotFoundException, SQLException. Note FileNotFoundException is a subclass of IOException"
+                    },
+                    {
+                        "topicText": "<b>3 Checked Exception</b> :- The classes that inherit the RuntimeException are known as unchecked exceptions that don't  have to be handled or declared. They can be thrown by the programmer or by the JVM. Common RuntimeException classes include the following:"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp; ArithmeticException :- Thrown when code attempts to divide by zero"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp ArrayIndexOutOfBoundsException Thrown when code uses an illegal index to access an array"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp ClassCastException :- Thrown when an attempt is made to cast an object to a class of which it is not an instance"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp NullPointerException :- Thrown when there is a null reference where an object is required"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp IllegalArgumentException :- Thrown by the programmer to indicate that a method has been passed an illegal or inappropriate argument"
+                    },
+                    {
+                        "topicText": "&nbsp; &nbsp NumberFormatException :- Subclass of IllegalArgumentException thrown when an attempt is made to convert a string to a numeric type but the string doesn't have an  appropriate format"
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Exception handling Basic Rules",
+                "topicMsgList": [
+                    {
+                        "topicText": "Try block must have a catch or finally",
+                        "cardCodeList": [
+                            {
+                                "code": "try{<br>&nbsp  System.out.println();<br>}catch(Exception e){<br>}"
+                            },
+                            {
+                                "code": "try{<br>&nbsp  System.out.println();<br>}finally{<br>}"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "While using multiple exception SuperClass mustn't precede Subclass as in that case Subclass will never be executed. Also for checked exception need a code which extends Checked exception otherwise we can't catch it or it will throw error. See below.",
+                        "cardCodeList": [
+                            {
+                                "code": "try{<br>}catch(IllegalArgumentException e){<br>}catch(NumberFormatException e){<br>} <br> <br> try{<br>&nbsp   throw new IOException();<br>}catch(FileNotFoundException|IOException e){}",
+                                "textDesc": "Won't compile"
+                            },
+                            {
+                                "code": "try{<br>}catch(NumberFormatException e){<br>}catch(IllegalArgumentException e){<br>} <br> <br> try {<br>&nbsp  throw new IOException();<br> } catch (FileNotFoundException | IOException e) {}",
+                                "textDesc": "Will Compile"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "You can catch a runtime/unchecked exception on any code, but for checked exception the code must throw that exception or must use a code that is extending the checked exception",
+                        "cardCodeList": [
+                            {
+                                "code": "try {<br> <br>} catch (NullPointerException e) {<br>}",
+                                "textDesc": "No Problem"
+                            },
+                            {
+                                "code": "try {<br> <br>} catch (FileNotFoundException e) {<br>}",
+                                "textDesc": "Won't Compile"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

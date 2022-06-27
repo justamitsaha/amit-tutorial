@@ -1,0 +1,30 @@
+{
+    "content": {
+        "questionList": [
+            {
+                "question": "What will below code print at the end?",
+                "code": "try {<br> System.out.println(1);<br> System.exit(0);<br> System.out.println(2);<br> } finally {<br> System.out.println(3);<br> }",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "Exception"
+                ],
+                "answer": "1",
+                "reason": "Normally Finally block executes at end but due to System.exit(0) execution will stop"
+            },
+            {
+                "question": "What will goHome return?",
+                "code": "static int goHome() {<br>  try {<br> Exception e = new Exception();<br> throw e;<br> return -1;<br> } catch (Exception e) {<br> return -2;<br> } finally {<br> return -3;<br> }",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "compilation failure"
+                ],
+                "answer": "compilation failure",
+                "reason": "Return after throw is unreachable and will not compile"
+            }
+        ]
+    }
+}

@@ -1,25 +1,28 @@
 <div class="container" *ngIf="!!content">
     <div class=" row">
-        <div class="col-sm-3 d-flex align-items-center">
-            <div class="align-items-center">
-                <h1 class="m-0"><span class="bold comic-sans-font"><b>{{content.pageHeader}}</b></span></h1>
+        <div class="d-flex justify-content-between">
+            <div class="col-sm-4 d-flex align-items-center">
+                <div class="align-items-center">
+                    <h1 class="m-0"><span class="bold comic-sans-font"><b>{{content.pageHeader}}</b></span></h1>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-2 d-flex align-items-center mb-3">
-            <mat-slide-toggle [checked]="false" class="custom-font-class" (click)="changeView($event)"> Switch to
-                Tutorial </mat-slide-toggle>
-        </div>
-        <div class="col-sm-3 d-flex align-items-center" *ngIf="!!prev_page">
-            <div class="d-grid gap-2  p-1">
-                <button type="button" class="btn btn-dark custom_button fs-6" [routerLink]="[prev_page.url]"
-                    routerLinkActive="active">Prev:{{prev_page.pageName}}</button>
+            <div class="col-sm-2 d-flex align-items-center mb-3">
+                <mat-slide-toggle [checked]="false" class="custom-font-class" (click)="changeView($event)"> Switch to
+                    Tutorial </mat-slide-toggle>
             </div>
-        </div>
-        <div class="col-sm-3 d-flex align-items-center" *ngIf="!!next_page">
-            <div class="d-grid gap-2  p-1">
-                <button type="button" class="btn btn-dark fs-6 custom_button" [routerLink]="[next_page.url]"
-                    routerLinkActive="active">Next
-                    :{{next_page.pageName}}</button>
+            <!-- <div class="col-sm-3 d-flex align-items-center" *ngIf="!!prev_page">
+    
+            </div> -->
+            <div class="col-sm-5 d-flex justify-content-end">
+                <div class="d-grid gap-2  p-1" *ngIf="!!prev_page">
+                    <button type="button" class="btn btn-dark custom_button fs-6" [routerLink]="[prev_page.url]"
+                        routerLinkActive="active"> &lt;&lt;Prev:{{prev_page.pageName}}</button>
+                </div>
+                <div class="d-grid gap-2  p-1" *ngIf="!!next_page">
+                    <button type="button" class="btn btn-dark fs-6 custom_button" [routerLink]="[next_page.url]"
+                        routerLinkActive="active">Next
+                        :{{next_page.pageName}} &gt;&gt;</button>
+                </div>
             </div>
         </div>
     </div>
