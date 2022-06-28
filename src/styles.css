@@ -13,7 +13,7 @@ body {
 
 body {
     margin: 0;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
     /* background-color: #ffffff; */
 }
 
@@ -47,10 +47,18 @@ code {
     font-size: small !important;
 }
 
-.comic-sans-font {
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+.custom-font {
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
 .mat-tree-node {
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+
+.mat-slide-toggle-content {
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+
+.custom_icon {
+    transform: scale(0.5);
 }

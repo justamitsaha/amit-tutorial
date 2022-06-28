@@ -1,19 +1,20 @@
 {
     "content": {
-        "pageHeader": "Lambdas Basic",
+        "pageHeader": "Method Reference",
         "topicList": [
             {
-                "topicHeader": "What is Lambdas?",
+                "topicHeader": "Method Reference",
                 "topicMsgList": [
                     {
-                        "topicText": "A lambda expression is a short block of code can which takes in parameters and can returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method. For a Lambda we need a functional interface and we can override the functional interface in the Lambda code itself with out the need of creating a implementation of Functional interface or writing an inner class implementation ",
+                        "topicText": "Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. When we simply pass the parameters of Lambda expression to functional interface implementation we can instead use Method reference instead of Lambda which looks much cleaner. You can pretend the compiler turns your method references into lambdas for you. There are four formats for method references.",
                         "cardCodeList": [
                             {
-                                "code": "public class Test {<br />&nbsp;&nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp;Shout sh = () -&gt; System.out.println(&quot;Lambda&quot;);<br /> &nbsp;&nbsp; &nbsp;sh.shout();<br />&nbsp;&nbsp;}<br /> }<br /> <br /> @FunctionalInterface<br /> interface Shout { void shout(); }",
+                                "code": "TestClass obj= () -&gt; System.out.println(&quot;Lambda&quot;);<br />obj.testMethod();",
                                 "textDesc": "Lambda implementation"
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/lambdas/Lambda.png"
+                                "code": "TestClass obj= System.out::println;<br /> obj.testMethod();",
+                                "textDesc": "Method Reference implementation"
                             }
                         ]
                     },

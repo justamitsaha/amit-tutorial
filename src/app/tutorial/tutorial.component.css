@@ -1,6 +1,6 @@
 .badge bg-secondary {
     /* font-family: 'Oxygen', sans-serif !important; */
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
 .code-block {
@@ -14,5 +14,5 @@
 
 .card-title {
     margin-bottom: 0 !important;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }

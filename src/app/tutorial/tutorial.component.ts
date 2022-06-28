@@ -14,6 +14,8 @@ export class TutorialComponent implements OnInit {
   isChecked: boolean = false;
   prev_page: any;
   next_page: any;
+  header_part_one: String = "";
+  header_part_two: String = "";
   constructor(
     private apiCallService: APICallService,
     private router: Router,
@@ -24,6 +26,8 @@ export class TutorialComponent implements OnInit {
     this.activeRoute.params.subscribe(routeParams => {
       this.apiCallService.getData(this.router.url + ".json").subscribe(data => {
         let page_list = this.apiCallService.getPageData();
+        this.header_part_one = this.router.url.split("/")[1];
+        this.header_part_two = this.router.url.split("/")[3];
         this.content = data.content;
         this.subjectHeader = data.content.topicHeader;
         for (var i = 0; i < page_list.length; i++) {
@@ -45,6 +49,5 @@ export class TutorialComponent implements OnInit {
   changeView(event: any) {
     let nextURI = (this.router.url).replace('tutorials', 'quiz');
     this.router.navigate([nextURI]);
-    console.log(event);
   }
 }

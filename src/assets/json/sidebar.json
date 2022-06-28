@@ -41,6 +41,10 @@
                             "url": "/java/tutorials/lambdas/lambdaBasic"
                         },
                         {
+                            "name": "Method Reference",
+                            "url": "/java/tutorials/lambdas/methodReference"
+                        },
+                        {
                             "name": "Functional Interface",
                             "url": "/java/tutorials/lambdas/functionalInterface"
                         }

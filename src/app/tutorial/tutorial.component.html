@@ -3,7 +3,16 @@
         <div class="d-flex justify-content-between">
             <div class="col-sm-4 d-flex align-items-center">
                 <div class="align-items-center">
-                    <h1 class="m-0"><span class="bold comic-sans-font"><b>{{content.pageHeader}}</b></span></h1>
+                    <h2 class="m-0">
+                        <span class="bold custom-font">
+                            <b>
+                                {{header_part_one}}
+                                <mat-icon class="custom_icon">arrow_forward</mat-icon>
+                                {{header_part_two}}
+                                <mat-icon class="custom_icon ">arrow_forward</mat-icon>{{content.pageHeader}}
+                            </b>
+                        </span>
+                    </h2>
                 </div>
             </div>
             <div class="col-sm-2 d-flex align-items-center mb-3">

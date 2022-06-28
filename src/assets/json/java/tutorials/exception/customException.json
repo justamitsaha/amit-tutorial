@@ -1,6 +1,6 @@
 {
     "content": {
-        "pageHeader": "Exception Handling",
+        "pageHeader": "Custom Exception",
         "topicList": [
             {
                 "topicHeader": "Override Exception",
