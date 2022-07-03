@@ -42,9 +42,8 @@
             <h2 class="card-title">{{topic.topicHeader}}</h2>
             <div *ngFor="let topicMsg of topic.topicMsgList">
                 <p class="card-text" [innerHTML]=topicMsg.topicText></p>
-                <div class="d-flex" *ngIf="topicMsg.cardCodeList">
-                    <div class="p-2 flex-fill fw-bold fst-italic code-block"
-                        *ngFor="let cardCode of topicMsg.cardCodeList">
+                <div class="d-flex code-block" *ngIf="topicMsg.cardCodeList">
+                    <div class="p-2 flex-fill fw-bold fst-italic" *ngFor="let cardCode of topicMsg.cardCodeList">
                         <code [innerHTML]=cardCode.code>
                         </code>
                         <p class="card-text" [innerHTML]=cardCode.textDesc></p>

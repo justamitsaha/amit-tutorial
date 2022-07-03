@@ -1,0 +1,47 @@
+{
+    "content": {
+        "pageHeader": "Optional",
+        "topicList": [
+            {
+                "topicHeader": "Optional",
+                "topicMsgList": [
+                    {
+                        "topicText": "Java introduced a new class Optional in jdk8. It is a public final class and used to deal with NullPointerException in Java application. You must import java.util package to use Optional. It provides methods which are used to check the presence of value for particular variable."
+                    },
+                    {
+                        "topicText": "Suppose we have a average method which takes an array of integers and calculates average for all the marks scored by a student. Now suppose a student was sick and did mot took exam, so input array length will be zero and so will be the average. This is not correct as average is should not be applicable in this scenario. This we can handel using optional",
+                        "cardCodeList": [
+                            {
+                                "code": "public static Optional&lt;Double&gt; average(int... scores) {<br /> &nbsp;&nbsp;if (scores.length == 0)<br />&nbsp;&nbsp; &nbsp;return Optional.empty();<br /> &nbsp;&nbsp;int sum = 0;<br /> &nbsp;&nbsp;for (int score : scores)<br /> &nbsp;&nbsp; &nbsp;sum += score;<br /> &nbsp;&nbsp;return Optional.of((double) sum /  scores.length);<br />}"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "If no scores are passed then method will return an empty optional, otherwise it will return the average wrapped in optional.",
+                        "cardCodeList": [
+                            {
+                                "code": "System.out.println(average(90, 100)); // Optional[95.0]<br /> System.out.println(average()); // Optional.empty"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Optional method provides get() method to retrieve value from optional. But we must check if the value is present or not with ifPresent() method otherwise it will throw NoSuchElementException",
+                        "cardCodeList": [
+                            {
+                                "code": "Optional&lt;Double&gt; opt = average(90, 100);<br /> if (opt.isPresent())<br /> &nbsp;&nbsp;System.out.println(opt.get()); // 95.0<br /> opt.ifPresent(System.out::println); &nbsp;//Calls Consumer with value"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Other useful methods",
+                        "cardCodeList": [
+                            {
+                                "code": "Optional&lt;Double&gt; opt2 = average();<br /> System.out.println(opt2.orElse(Double.NaN));<br /> System.out.println(opt2.orElseGet(() -&gt; Math.random()));<br /> System.out.println(opt2.orElseThrow()); // NoSuchElementException<br /> System.out.println(opt2.orElseThrow(() -&gt; new IllegalStateException())); &nbsp;//Throws exception created by calling Supplier"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

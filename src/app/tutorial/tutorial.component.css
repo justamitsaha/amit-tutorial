@@ -5,6 +5,7 @@
 
 .code-block {
     background-color: rgb(236, 240, 243);
+    border-radius: 1rem;
 }
 
 .card-text {

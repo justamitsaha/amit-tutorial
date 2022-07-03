@@ -33,13 +33,6 @@
                         "topicText": "The smallest integer type is byte, byte are especially useful when you are working with a stream of data from a network or file. They are also useful when you are working with raw binary data that may not be directly compatible with Java's other built-in types. Although you might think that using a byte or short would be more efficient than using an int in situations in which the larger range of an int is not needed, this may not be the case. The reason is that when byte and short values are used in an expression, they are promoted to int when the expression is evaluated"
                     },
                     {
-                        "cardCodeList": [
-                            {
-                                "code": ""
-                            }
-                        ]
-                    },
-                    {
                         "topicText": "The type float specifies a single-precision value that uses 32 bits of storage.Double precision, as denoted by the double keyword, uses 64 bits to store a value. Single precision is faster on some processors and takes half as much space as double precision, but will become imprecise when the values are either very large or very small. Floating-point literals in Java default to double precision. All transcendental math functions, such as sin( ), cos( ), and sqrt( ), return double values. When you need to maintain accuracy over many iterative calculations, or are manipulating large-valued numbers, double is the best choice. ",
                         "cardCodeList": [
                             {

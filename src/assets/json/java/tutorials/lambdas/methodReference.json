@@ -6,49 +6,64 @@
                 "topicHeader": "Method Reference",
                 "topicMsgList": [
                     {
-                        "topicText": "Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. When we simply pass the parameters of Lambda expression to functional interface implementation we can instead use Method reference instead of Lambda which looks much cleaner. You can pretend the compiler turns your method references into lambdas for you. There are four formats for method references.",
+                        "topicText": "Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. <b>When we simply pass the parameters of Lambda expression to functional interface implementation we can instead use Method reference instead of Lambda which looks much cleaner.</b> You can pretend the compiler turns your method references into lambdas for you. ",
                         "cardCodeList": [
                             {
-                                "code": "TestClass obj= () -&gt; System.out.println(&quot;Lambda&quot;);<br />obj.testMethod();",
+                                "code": "TestClass obj= (text) -&gt; System.out.println(text);<br /> obj.testMethod(&quot;Dummy Text&quot;);",
                                 "textDesc": "Lambda implementation"
                             },
                             {
-                                "code": "TestClass obj= System.out::println;<br /> obj.testMethod();",
+                                "code": "TestClass obj= System.out::println;<br /> obj.testMethod(&quot;Dummy Text&quot;);",
                                 "textDesc": "Method Reference implementation"
                             }
                         ]
                     },
                     {
-                        "topicText": "With out Lambda we have to go for either Initializing the interface or Inner class implementation. But both have draw backs that they create extra class files which can bloat the footprint of application",
+                        "topicText": "There are four formats for usage of method references, depending on where we are using it."
+                    },
+                    {
+                        "topicText": "<b> 1 CALLING STATIC METHODS </b> : Collection.sort(lst)",
                         "cardCodeList": [
                             {
-                                "code": "public class Test {<br /> &nbsp;&nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp;ShoutImpl sh = new ShoutImpl();<br /> &nbsp;&nbsp; &nbsp;sh.shout();<br /> &nbsp;&nbsp;}<br /> }<br /> <br /> @FunctionalInterface<br /> interface Shout { void shout(); }<br /> <br /> class ShoutImpl implements Shout {<br /> &nbsp;&nbsp;@Override<br /> &nbsp;&nbsp;public void shout() { System.out.println(&quot;Interface&quot;); &nbsp;}<br /> }",
-                                "textDesc": "Implementing the interface."
+                                "code": "Consumer&lt;List&lt;Integer&gt;&gt; methodRef = Collections::sort;<br />methodRef.accept(lst);"
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/lambdas/InterfaceImpl.png",
-                                "textDesc": "Implementing the interface extra class created."
+                                "code": "Consumer&lt;List&lt;Integer&gt;&gt; lambda = s-&gt; Collections.sort(s);<br /> lambda.accept(lst);"
                             }
                         ]
                     },
                     {
-                        "topicText": "In Inner class we are not creating implementation but the inner class still creates Anonymous class.",
+                        "topicText": "<b> 2 CALLING INSTANCE METHODS ON OBJECT AND PASSING A PARAM</b>: str.startsWith(&quot;a&quot;)",
                         "cardCodeList": [
                             {
-                                "code": "public class Test {<br /> &nbsp;&nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp;Shout shoutInnerClass = new Shout() {<br /> &nbsp;&nbsp; &nbsp; &nbsp;public void shout() { System.out.println(&quot;Inner Class&quot;); }<br /> &nbsp;&nbsp; &nbsp;};<br /> &nbsp;&nbsp; &nbsp;shoutInnerClass.shout();<br /> &nbsp;&nbsp;}<br /> }<br /> <br /> @FunctionalInterface<br /> interface Shout { void shout(); }",
-                                "textDesc": " Inner class implementation"
+                                "code": "var str = &quot;abc&quot;;<br /> Predicate&lt;String&gt; methodRef = str::startsWith;<br /> methodRef.test(&quot;a&quot;);"
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/lambdas/InnerClass.png",
-                                "textDesc": " Anonymous class created adding overhead to application."
+                                "code": "var str = &quot;abc&quot;;<br /> Predicate&lt;String&gt; lambda = s -&gt; str.startsWith(s);<br /> lambda.test(&quot;a&quot;);"
                             }
                         ]
                     },
                     {
-                        "topicText": " A Lambda expression always needs a functional interface method to execute"
+                        "topicText": "<b> 2 CALLING INSTANCE METHODS ON OBJECT </b>: str.isEmpty()",
+                        "cardCodeList": [
+                            {
+                                "code": "Predicate&lt;String&gt; methodRef = String::isEmpty;<br />methodRef.test(&quot;Yo&quot;);"
+                            },
+                            {
+                                "code": "Predicate&lt;String&gt; lambda = s -&gt; s.isEmpty();<br />lambda.test(&quot;Yo&quot;);"
+                            }
+                        ]
                     },
                     {
-                        "topicText": " It is a good practice to keep one or two line of code in Lambda expression."
+                        "topicText": "<b> CALLING CONSTRUCTORS </b>",
+                        "cardCodeList": [
+                            {
+                                "code": "Supplier &lt;List&lt;String&gt;&gt; methodRef4 = ArrayList::new;<br /> methodRef4.get();"
+                            },
+                            {
+                                "code": "Supplier&lt;List&lt;String&gt;&gt; lambda4= () -&gt; new ArrayList();<br /> lambda4.get();"
+                            }
+                        ]
                     }
                 ]
             }

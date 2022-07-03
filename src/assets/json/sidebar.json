@@ -47,6 +47,14 @@
                         {
                             "name": "Functional Interface",
                             "url": "/java/tutorials/lambdas/functionalInterface"
+                        },
+                        {
+                            "name": "Optional",
+                            "url": "/java/tutorials/lambdas/optional"
+                        },
+                        {
+                            "name": "Stream",
+                            "url": "/java/tutorials/lambdas/stream"
                         }
                     ]
                 }
