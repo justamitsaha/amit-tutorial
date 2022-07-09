@@ -21,7 +21,7 @@
                         "topicText": "With out Lambda we have to go for either Initializing the interface or Inner class implementation. But both have draw backs that they create extra class files which can bloat the footprint of application",
                         "cardCodeList": [
                             {
-                                "img": "../../../assets/json/java/tutorials/lambdas/streamPipeline.png"
+                                "img": "../../../assets/json/java/tutorials/functionalProgramming/streamPipeline.png"
                             }
                         ]
                     },

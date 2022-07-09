@@ -1,0 +1,31 @@
+{
+    "content": {
+        "header": "Functional Programming",
+        "questionList": [
+            {
+                "question": "What will below code print at the end?",
+                "code": "&nbsp;&nbsp; &nbsp;var infinite = Stream.iterate(1, x -&gt; x + 1);<br /> &nbsp;&nbsp; &nbsp;infinite.limit(5)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.peek(System.out::print)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.filter(x -&gt; x % 2 == 1)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.forEach(System.out::print);",
+                "options": [
+                    "12345",
+                    "11233455",
+                    "1122334455",
+                    "Out of memory"
+                ],
+                "answer": "11233455",
+                "reason": "At first the element passes through peek then goes through filer and if passes then prints"
+            },
+            {
+                "question": "What will print",
+                "code": "&nbsp;&nbsp; &nbsp;var infinite = Stream.iterate(1, x -&gt; x + 1);<br /> &nbsp;&nbsp; &nbsp;infinite.filter(x -&gt; x % 2 == 1)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.peek(System.out::print)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.limit(5)<br /> &nbsp;&nbsp; &nbsp; &nbsp;.forEach(System.out::print);",
+                "options": [
+                    "12345",
+                    "11233455",
+                    "1122334455",
+                    "1133557799"
+                ],
+                "answer": "1133557799",
+                "reason": "Return after throw is unreachable and will not compile"
+            }
+        ]
+    }
+}

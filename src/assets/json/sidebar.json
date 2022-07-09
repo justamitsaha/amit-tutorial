@@ -34,27 +34,35 @@
                     ]
                 },
                 {
-                    "name": "Lambdas",
+                    "name": "Functional Programming",
                     "children": [
                         {
                             "name": "What is Lambda?",
-                            "url": "/java/tutorials/lambdas/lambdaBasic"
+                            "url": "/java/tutorials/functionalProgramming/lambdaBasic"
                         },
                         {
                             "name": "Method Reference",
-                            "url": "/java/tutorials/lambdas/methodReference"
+                            "url": "/java/tutorials/functionalProgramming/methodReference"
                         },
                         {
                             "name": "Functional Interface",
-                            "url": "/java/tutorials/lambdas/functionalInterface"
+                            "url": "/java/tutorials/functionalProgramming/functionalInterface"
                         },
                         {
                             "name": "Optional",
-                            "url": "/java/tutorials/lambdas/optional"
+                            "url": "/java/tutorials/functionalProgramming/optional"
                         },
                         {
                             "name": "Stream",
-                            "url": "/java/tutorials/lambdas/stream"
+                            "url": "/java/tutorials/functionalProgramming/stream"
+                        },
+                        {
+                            "name": "Terminal OPerations",
+                            "url": "/java/tutorials/functionalProgramming/streamTerminalOperations"
+                        },
+                        {
+                            "name": "Intermediate OPerations",
+                            "url": "/java/tutorials/functionalProgramming/streamIntermediateOperations"
                         }
                     ]
                 }

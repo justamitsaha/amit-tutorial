@@ -1,7 +1,7 @@
 <div class="container">
     <div class=" row">
         <div class="col-sm-8">
-            <h1><span class="badge bg-secondary">Exception Handelling</span></h1>
+            <h1><span class="badge bg-secondary" *ngIf="!!content">{{content.header}}</span></h1>
         </div>
         <div class="col-sm-2">
             <mat-slide-toggle [checked]="true" class="custom-font-class" (click)="changeView($event)"> Back to Tutorial
@@ -12,11 +12,11 @@
 
     <div class="card" *ngIf="!!content">
         <div class="card-body" *ngFor="let question of content.questionList">
-            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="question.isCorect">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="question.isCorrect">
                 <strong>Yay!</strong> {{question.reason}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="question.isInCorect">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="question.isInCorrect">
                 <strong>OOPS!</strong> {{question.reason}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>

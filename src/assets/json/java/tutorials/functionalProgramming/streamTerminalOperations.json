@@ -1,0 +1,91 @@
+{
+    "content": {
+        "pageHeader": "Stream",
+        "topicList": [
+            {
+                "topicHeader": "Stream Terminal Operations",
+                "topicMsgList": [
+                    {
+                        "topicText": "<b>1 count() : </b>The count() method determines the number of elements in a finite stream. For an infinite stream, it never terminates",
+                        "cardCodeList": [
+                            {
+                                "code": "Stream&lt;String&gt; s = Stream.of(&quot;monkey&quot;, &quot;gorilla&quot;, &quot;bonobo&quot;);<br /> System.out.println(s.count());"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>2 min() and max() : </b>The min() and max() methods allow you to pass a custom comparator and find the smallest or largest value in a finite stream according to that sort order. Like the count() method, min() and max() hang on an infinite stream. It returns a false for empty stream",
+                        "cardCodeList": [
+                            {
+                                "code": "Optional&lt;T&gt; min(Comparator&lt;? super T&gt; comparator)<br /> Optional&lt;T&gt; max(Comparator&lt;? super T&gt; comparator)"
+                            },
+                            {
+                                "code": "Stream&lt;String&gt; s = Stream.of(&quot;monkey&quot;, &quot;donkey&quot;, &quot;bonobo&quot;);<br /> Optional&lt;String&gt; min = s.min((s1, s2) -&gt; s1.length()-s2.length());<br /> min.ifPresent(System.out::println); "
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>3 findAny() and findFirst() :</b> The findAny() and findFirst() methods return an element of the stream unless the stream is empty. If the stream is empty, they return an empty Optional. It can terminate an infinite stream",
+                        "cardCodeList": [
+                            {
+                                "code": "Stream&lt;Double&gt; randoms = Stream.generate(Math::random);<br /> randoms.findAny().ifPresent(System.out::println);<br /> Stream&lt;Integer&gt; oddNumbers = Stream.iterate(1, n -&gt; n + 2);<br /> oddNumbers.findFirst().ifPresent(System.out::println);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>4 allMatch(), anyMatch(), and noneMatch() :</b> The findAny() and findFirst() methods return an element of the stream unless the stream is empty. If the stream is empty, they return an empty Optional. It can terminate an infinite stream",
+                        "cardCodeList": [
+                            {
+                                "code": "anyMatch allMatch --&gt; boolean = stream.anyMatch(Predicate &lt;? super T&gt; predicate)<br /> var list = List.of(&quot;monkey&quot;, &quot;2&quot;, &quot;chimp&quot;);<br /> Predicate&lt;String&gt; pred = x -&gt; Character.isLetter(x.charAt(0));"
+                            },
+                            {
+                                "code": "System.out.println(list.stream().anyMatch(pred)); &nbsp;// true<br /> System.out.println(list.stream().allMatch(pred)); &nbsp;// false<br /> System.out.println(list.stream().noneMatch(pred)); // false"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>5 forEach() :</b> Iterates over each element in a Stream, Won't work for infinite stream",
+                        "cardCodeList": [
+                            {
+                                "code": "Stream&lt;String&gt; s1 = Stream.of(&quot;Monkey&quot;, &quot;Gorilla&quot;, &quot;Bonobo&quot;);<br /> s1.forEach(System.out::print);"
+                            },
+                            {
+                                "code": "System.out.println(list.stream().anyMatch(pred)); &nbsp;// true<br /> System.out.println(list.stream().allMatch(pred)); &nbsp;// false<br /> System.out.println(list.stream().noneMatch(pred)); // false"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>6 reduce() :</b> The reduce() method combines a stream into a single object. It is a reduction, which means it processes all elements.  Reduction stream operations allow us to produce one single result from a sequence of elements, by repeatedly applying a combining operation to the elements in the sequence. It has 3 signature."
+                    },
+                    {
+                        "topicText": "&nbsp;&nbsp; &nbsp;REDUCE example 1 -&gt;&gt; T reduce(T identity, BinaryOperator&lt;T&gt; accumulator)",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;Stream&lt;String&gt; stream = Stream.of(&quot;w&quot;, &quot;o&quot;, &quot;l&quot;, &quot;f&quot;);<br /> &nbsp;&nbsp; &nbsp;Stream&lt;String&gt; newstream = Stream.of(&quot;w&quot;, &quot;o&quot;, &quot;l&quot;, &quot;f&quot;);<br /> &nbsp;&nbsp; &nbsp;String word = stream.reduce(&quot;&quot;, (x, c) -&gt; x + c);<br /> &nbsp;&nbsp; &nbsp;String word2 = newstream.reduce(&quot;&quot;, String::concat);<br /> &nbsp;&nbsp; &nbsp;System.out.println(word);&nbsp;<br /> &nbsp;&nbsp; &nbsp;System.out.println(word2);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "&nbsp;&nbsp; &nbsp;REDUCE example 2 --&gt;&gt; Optional&lt;T&gt; reduce(BinaryOperator&lt;T&gt; accumulator) When identity is not provided it returns an optional",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;BinaryOperator&lt;Integer&gt; op = (a, b) -&gt; a * b;<br /> &nbsp;&nbsp; &nbsp;Stream&lt;Integer&gt; empty = Stream.empty();<br /> &nbsp;&nbsp; &nbsp;empty.reduce(op).ifPresent(System.out::println); &nbsp; &nbsp; &nbsp; &nbsp; // no output<br /> &nbsp;&nbsp; &nbsp;Stream&lt;Integer&gt; oneElement = Stream.of(3);<br /> &nbsp;&nbsp; &nbsp;oneElement.reduce(op).ifPresent(System.out::println); &nbsp; &nbsp;// 3<br /> &nbsp;&nbsp; &nbsp;Stream&lt;Integer&gt; threeElements = Stream.of(3, 5, 6);<br /> &nbsp;&nbsp; &nbsp;threeElements.reduce(op).ifPresent(System.out::println); // 90"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "&nbsp;&nbsp; &nbsp;REDUCE example 3 --&gt;&gt; &lt;U&gt; U reduce(U identity, BiFunction&lt;U,? super T,U&gt; accumulator, BinaryOperator&lt;U&gt; combiner) The third method signature is used when we are dealing with different types. It allows Java to create intermediate reductions and then combine them at the end",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;Stream&lt;String&gt; stream1 = Stream.of(&quot;w&quot;, &quot;o&quot;, &quot;l&quot;, &quot;f!&quot;);<br /> &nbsp;&nbsp; &nbsp;int length = stream1.reduce(0,&nbsp;<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;(i, w) -&gt; i+w.length(),<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;(a, b) -&gt; a+b);<br /> &nbsp;&nbsp; &nbsp;System.out.println(length);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "<b>7 collect() :</b> The collect() method is a special type of reduction called a mutable reduction. It is more efficient than a regular reduction because we use the same mutable object while accumulating. It lets us get data out of streams and into another form"
+                    }
+                ]
+            }
+        ]
+    }
+}

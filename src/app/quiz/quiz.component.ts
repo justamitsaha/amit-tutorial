@@ -18,7 +18,7 @@ export class QuizComponent implements OnInit {
 
   ngOnInit(): void {
     let webURI = (this.router.url).split("/");
-    let path = "/" + webURI[1] + "/" + webURI[2] + "/" + webURI[3] + "/" + webURI[3] + ".json"
+    let path = "/" + webURI[1] + "/" + webURI[2] + "/" + webURI[3] + ".json"
     this.apiCallService.getData(path).subscribe(data => {
       this.content = data.content;
     });
@@ -32,11 +32,11 @@ export class QuizComponent implements OnInit {
 
   submitAnswer(question: any) {
     if (question.answer === this.answer) {
-      question.isCorect = true;
-      question.isInCorect = false;
+      question.isCorrect = true;
+      question.isInCorrect = false;
     } else {
-      question.isInCorect = true;
-      question.isCorect = false;
+      question.isInCorrect = true;
+      question.isCorrect = false;
     }
   }
   answerSelected(selection: any, question: any) {
