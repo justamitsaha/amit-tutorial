@@ -63,6 +63,22 @@
                         {
                             "name": "Intermediate OPerations",
                             "url": "/java/tutorials/functionalProgramming/streamIntermediateOperations"
+                        },
+                        {
+                            "name": "Primitive Stream",
+                            "url": "/java/tutorials/functionalProgramming/primitiveStream"
+                        },
+                        {
+                            "name": "Mapping Stream",
+                            "url": "/java/tutorials/functionalProgramming/mappingStream"
+                        },
+                        {
+                            "name": "Optional Primitives",
+                            "url": "/java/tutorials/functionalProgramming/optionalPrimitives"
+                        },
+                        {
+                            "name": "Stream Concepts",
+                            "url": "/java/tutorials/functionalProgramming/streamConcepts"
                         }
                     ]
                 }

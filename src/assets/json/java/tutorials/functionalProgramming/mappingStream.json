@@ -1,0 +1,42 @@
+{
+    "content": {
+        "pageHeader": "Mapping Stream",
+        "topicList": [
+            {
+                "topicHeader": "Mapping Stream",
+                "topicMsgList": [
+                    {
+                        "topicText": "We can map stream from one type to another. They have to be compatible types for this to work. Java requires a mapping function to be provided as a parameter",
+                        "cardCodeList": [
+                            {
+                                "img": "/assets/json/java/tutorials/functionalProgramming/mappingStreams.png"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "This function takes an Object, which is a String in this case. The function returns an int. The function mappings are intuitive here. They take the source type and return the target type. In this example, the actual function type is ToIntFunction",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;Stream&lt;String&gt; objStream = Stream.of(&quot;penguin&quot;, &quot;fish&quot;);<br /> &nbsp;&nbsp; &nbsp;IntStream intStream = objStream.mapToInt(s -&gt; s.length()",
+                                "img": "/assets/json/java/tutorials/functionalProgramming/functionalParamMapping.png"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Primitive Stream can help in reducing the line of code and complexity drastically. ",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;IntStream count = IntStream.iterate(1, n -&gt; n+1).limit(5);<br /> &nbsp;&nbsp; &nbsp;count.forEach(System.out::println); //12345",
+                                "textDesc": "We have to pass 6 as 2nd param is exclusive of last item"
+                            },
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;IntStream rangeClosed = IntStream.rangeClosed(1, 5);<br /> &nbsp;&nbsp; &nbsp;rangeClosed.forEach(System.out::println); //12345",
+                                "textDesc": "Since we are using rangeClosed() we can pass 5"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

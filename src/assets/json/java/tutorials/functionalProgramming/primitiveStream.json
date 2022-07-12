@@ -1,0 +1,110 @@
+{
+    "content": {
+        "pageHeader": "Primitive Stream",
+        "topicList": [
+            {
+                "topicHeader": "Primitive Stream",
+                "topicMsgList": [
+                    {
+                        "topicText": "There are 3 type of Primitive streams"
+                    },
+                    {
+                        "topicText": "<b>1 IntStream:</b> : Used for the primitive types int, short, byte, and char."
+                    },
+                    {
+                        "topicText": "<b>2 LongStream</b> : : Used for the primitive type long"
+                    },
+                    {
+                        "topicText": "<b>3 DoubleStream</b> : Used for the primitive types double and float"
+                    },
+                    {
+                        "topicText": "Common primitive stream methods"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 1: OptionalDouble average()</b> : The arithmetic mean of the elements. Supported by all primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 2: Stream<T> boxed()</b> : A Stream<T> where T is the wrapper class associated with the primitive value.  Supported by all primitive Stream type."
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 3: OptionalInt max()</b> : The maximum element of the stream.  Supported by integer primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 4: OptionalLong max()</b> : The maximum element of the stream.  Supported by long primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 5: OptionalDouble max()</b> : The maximum element of the stream.  Supported by double primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 6: OptionalInt min()</b> : The minium element of the stream.  Supported by integer primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 7: OptionalLong min()</b> : The minium element of the stream.  Supported by long primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 8: OptionalDouble min()</b> : The minium element of the stream.  Supported by double primitive Stream type"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 9: IntStream range(int a, int b)</b> : Returns a primitive stream from a(inclusive) to b (exclusive)"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 10: LongStream range(long a, long b)</b> : Returns a primitive stream from a(inclusive) to b (exclusive)"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 11: IntStream rangeClosed(int a, int b)</b> : Returns a primitive stream from a(inclusive) to b (inclusive)"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 12: LongStream rangeClosed(long a, long b)</b>:  Returns a primitive stream from a(inclusive) to b (inclusive)"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 13: int sum()</b> : Returns the sum of the elements in the stream"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 14: long sum()</b> : Returns the sum of the elements in the stream"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 15: double sum()</b> : Returns the sum of the elements in the stream"
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 16: IntSummaryStatistics summaryStatistics()</b> : Returns an object containing numerous stream statistics such as the average, min, max, etc."
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 17: LongSummaryStatistics summaryStatistics()</b> : Returns an object containing numerous stream statistics such as the average, min, max, etc."
+                    },
+                    {
+                        "topicText": "<b>&nbsp&nbsp 18: DoubleSummaryStatistics summaryStatistics()</b> : Returns an object containing numerous stream statistics such as the average, min, max, etc."
+                    },
+                    {
+                        "topicText": "Create Primitive stream",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;var random = DoubleStream.generate(Math::random);<br /> &nbsp;&nbsp; &nbsp;var fractions = DoubleStream.iterate(.5, d -&gt; d / 2);<br /> &nbsp;&nbsp; &nbsp;random.limit(3).forEach(System.out::println);<br /> &nbsp;&nbsp; &nbsp;fractions.limit(3).forEach(System.out::println);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "FYI Random class provides methods which generates Primitive stream.",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;Random random1 =new Random();<br /> &nbsp;&nbsp; &nbsp;random1.ints().limit(6).forEach(System.out::println);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Primitive Stream can help in reducing the line of code and complexity drastically. ",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;IntStream count = IntStream.iterate(1, n -&gt; n+1).limit(5);<br /> &nbsp;&nbsp; &nbsp;count.forEach(System.out::println); //12345",
+                                "textDesc": "We have to pass 6 as 2nd param is exclusive of last item"
+                            },
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;IntStream rangeClosed = IntStream.rangeClosed(1, 5);<br /> &nbsp;&nbsp; &nbsp;rangeClosed.forEach(System.out::println); //12345",
+                                "textDesc": "Since we are using rangeClosed() we can pass 5"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

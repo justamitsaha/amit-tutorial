@@ -13,7 +13,7 @@
                                 "textDesc": "Lambda implementation"
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/functionalProgramming/Lambda.png"
+                                "img": "/assets/json/java/tutorials/functionalProgramming/Lambda.png"
                             }
                         ]
                     },
@@ -25,7 +25,7 @@
                                 "textDesc": "Implementing the interface."
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/functionalProgramming/InterfaceImpl.png",
+                                "img": "/assets/json/java/tutorials/functionalProgramming/InterfaceImpl.png",
                                 "textDesc": "Implementing the interface extra class created."
                             }
                         ]
@@ -38,7 +38,7 @@
                                 "textDesc": " Inner class implementation"
                             },
                             {
-                                "img": "../../../assets/json/java/tutorials/functionalProgramming/InnerClass.png",
+                                "img": "/assets/json/java/tutorials/functionalProgramming/InnerClass.png",
                                 "textDesc": " Anonymous class created adding overhead to application."
                             }
                         ]

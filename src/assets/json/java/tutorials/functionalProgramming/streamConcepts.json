@@ -1,0 +1,21 @@
+{
+    "content": {
+        "pageHeader": "Stream Concepts",
+        "topicList": [
+            {
+                "topicHeader": "Stream Concepts",
+                "topicMsgList": [
+                    {
+                        "topicText": "What will happen below?",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;var cats = new ArrayList&lt;String&gt;();<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;cats.add(&quot;Annie&quot;);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;cats.add(&quot;Ripley&quot;);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;var stream = cats.stream();<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;cats.add(&quot;KC&quot;);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(stream.count());",
+                                "textDesc": "We can add values to stream after creation unless its terminated"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

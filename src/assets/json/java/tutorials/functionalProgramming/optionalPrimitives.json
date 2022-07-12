@@ -1,0 +1,28 @@
+{
+    "content": {
+        "pageHeader": "Optional Primitives",
+        "topicList": [
+            {
+                "topicHeader": "Optional Primitives",
+                "topicMsgList": [
+                    {
+                        "topicText": "We have seen Optional can be used for methods which may or may not return value. ",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;var stream = IntStream.rangeClosed(1, 10);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;OptionalDouble optional = stream.average();"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "The OptionalDouble is different than Optional.It is used for Primitive stream. For Wrapper call we use Optional&lt;Double&gt; and for Primitive class we user OptionalDouble. Working with the primitive optional class looks similar to working with the Optional class itself.The only noticeable difference is that we called getAsDouble() rather than get()",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;var stream = IntStream.rangeClosed(1, 10);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;OptionalDouble optional = stream.average();<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;optional.ifPresent(System.out::println); // 5.5<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(optional.getAsDouble()); // 5.5<br /> <br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;var stream2 = IntStream.of();<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;OptionalDouble optional1 = stream2.average();<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(optional1.orElseGet(() -&gt; Double.NaN));"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
