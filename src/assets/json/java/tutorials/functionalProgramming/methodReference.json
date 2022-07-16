@@ -22,7 +22,7 @@
                         "topicText": "There are four formats for usage of method references, depending on where we are using it."
                     },
                     {
-                        "topicText": "<b> 1 CALLING STATIC METHODS </b> : Collection.sort(lst)",
+                        "topicText": "<b> 1 CALLING STATIC METHODS </b> : Collection.sort(lst) becomes Collection::sort",
                         "cardCodeList": [
                             {
                                 "code": "Consumer&lt;List&lt;Integer&gt;&gt; methodRef = Collections::sort;<br />methodRef.accept(lst);"
@@ -33,7 +33,7 @@
                         ]
                     },
                     {
-                        "topicText": "<b> 2 CALLING INSTANCE METHODS ON OBJECT AND PASSING A PARAM</b>: str.startsWith(&quot;a&quot;)",
+                        "topicText": "<b> 2 CALLING INSTANCE METHODS ON OBJECT AND PASSING A PARAM</b>: str.startsWith(&quot;a&quot;) becomes str::startsWith(&quot;a&quot;)",
                         "cardCodeList": [
                             {
                                 "code": "var str = &quot;abc&quot;;<br /> Predicate&lt;String&gt; methodRef = str::startsWith;<br /> methodRef.test(&quot;a&quot;);"

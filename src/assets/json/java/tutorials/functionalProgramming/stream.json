@@ -43,15 +43,36 @@
                         ]
                     },
                     {
-                        "topicText": "Creating infinite stream",
+                        "topicText": "Stream class provides generate method which takes a Supplier as input to create infinite stream",
                         "cardCodeList": [
                             {
-                                "code": "Stream&lt;Double&gt; randoms = Stream.generate(Math::random);",
-                                "textDesc": "Infinite streams"
+                                "code": "Random rd = new Random();<br />Stream&lt;Integer&gt; intStream = Stream.generate(rd::nextInt);<br /> intStream.limit(5).forEach(System.out::println);",
+                                "textDesc": "Infinite streams which generates Random Integer with Supplier"
                             },
                             {
-                                "code": "Stream&lt;Integer&gt; oddNumbers = Stream.iterate(1, n -&gt; n + 2);<br /> Stream.generate(() -&gt; &quot;Elsa&quot;);<br />Stream&lt;Integer&gt; oddNumberUnder100 = Stream.iterate(1, n -&gt; n &lt; 100, n -&gt; n + 2);",
-                                "textDesc": "Infinite streams using iterate"
+                                "code": "Stream&lt;Double&gt; doubleStream = Stream.generate(Math::random);<br />doubleStream.limit(5).forEach(System.out::println);",
+                                "textDesc": "Infinite streams which generates Random Double with Supplier"
+                            },
+                            {
+                                "code": "Stream&lt;String&gt; stringStream = Stream.generate(() -&gt; &quot;YO&quot;);<br />stringStream.limit(5).forEach(System.out::println);",
+                                "textDesc": "Infinite Stream of String &quot;YO&quot"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Stream also provides iterate method to create stream. It takes in a seed which is initial value and an unary operator to generate next values. This generates an infinite stream. ",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;intStream = Stream.iterate(1, s -&gt; s + 1);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;intStream.limit(5).forEach(System.out::println);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "There ia another overloaded version of iterate which takes a seed, an unary operator and a predicate to determine condition, This was introduced in Java 9 and the predicate can be used to make the stream finite. When the predicate returns false the stream stops",
+                        "cardCodeList": [
+                            {
+                                "code": "intStream = Stream.iterate(0, s -&gt; s &lt; 20, s -&gt; s + 1);<br /> intStream.forEach(System.out::println);",
+                                "textDesc": "Finite stream which stops when values reaches 19 "
                             }
                         ]
                     }

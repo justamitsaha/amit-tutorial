@@ -18,7 +18,7 @@
                         ]
                     },
                     {
-                        "topicText": "With out Lambda we have to go for either Initializing the interface or Inner class implementation. But both have draw backs that they create extra class files which can bloat the footprint of application",
+                        "topicText": "With out Lambda we have to Initializing the interface and implement the abstract method or do the same with Inner class implementation. But both have draw backs as in both case lines of code increases and application becomes complicated and they create extra class files which can bloat the footprint of application",
                         "cardCodeList": [
                             {
                                 "code": "public class Test {<br /> &nbsp;&nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp;ShoutImpl sh = new ShoutImpl();<br /> &nbsp;&nbsp; &nbsp;sh.shout();<br /> &nbsp;&nbsp;}<br /> }<br /> <br /> @FunctionalInterface<br /> interface Shout { void shout(); }<br /> <br /> class ShoutImpl implements Shout {<br /> &nbsp;&nbsp;@Override<br /> &nbsp;&nbsp;public void shout() { System.out.println(&quot;Interface&quot;); &nbsp;}<br /> }",
@@ -44,7 +44,7 @@
                         ]
                     },
                     {
-                        "topicText": " A Lambda expression always needs a functional interface method to execute"
+                        "topicText": " A Lambda expression always needs a functional interface method to execute i.e. interface with one abstract method. It doesn't work with Abstract class."
                     },
                     {
                         "topicText": " It is a good practice to keep one or two line of code in Lambda expression."
