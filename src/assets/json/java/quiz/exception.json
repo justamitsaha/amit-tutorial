@@ -11,7 +11,7 @@
                     "3",
                     "Exception"
                 ],
-                "answer": "1",
+                "answer": "0",
                 "reason": "Normally Finally block executes at end but due to System.exit(0) execution will stop"
             },
             {
@@ -23,7 +23,7 @@
                     "3",
                     "compilation failure"
                 ],
-                "answer": "compilation failure",
+                "answer": "3",
                 "reason": "Return after throw is unreachable and will not compile"
             }
         ]

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
@@ -7,11 +8,12 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Test {
+    Date date = new Date();
+    Date
+
     public static void main(String[] args) {
-
-        Optional<Double> opt = average();
-        opt.ifPresent(System.out::println); // 95.0
-
+        System.out.println(args[0]);
+        System.out.println(args[1]);
     }
 
     public static Optional<Double> average(int... scores) {
@@ -22,4 +24,5 @@ public class Test {
             sum += score;
         return Optional.of((double) sum / scores.length);
     }
+
 }

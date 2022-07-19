@@ -7,6 +7,10 @@
                     "name": "Basic",
                     "children": [
                         {
+                            "name": "Java components",
+                            "url": "/java/tutorials/basic/javaComponents"
+                        },
+                        {
                             "name": "Blocks Execution Order",
                             "url": "/java/tutorials/basic/blocks"
                         },

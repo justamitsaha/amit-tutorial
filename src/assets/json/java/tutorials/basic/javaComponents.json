@@ -1,0 +1,65 @@
+{
+    "content": {
+        "pageHeader": "Java components",
+        "topicList": [
+            {
+                "topicHeader": "Java software components",
+                "topicMsgList": [
+                    {
+                        "topicText": "The Java Development Kit (JDK) contains the minimum software you need to do Java development. Key pieces include the compiler (javac), which converts .java files to .class files, and the launcher java, which creates the virtual machine and executes the program. The JDK also contains other tools including the archiver (jar) command, which can package files together, and the API documentation (javadoc) command for generating documentation"
+                    },
+                    {
+                        "topicText": "The JDK also contains other tools including the archiver (jar) command, which can package files together, and the API documentation (javadoc) command for generating documentation"
+                    },
+                    {
+                        "topicText": "The javac program generates instructions in a special format that the java command can run called bytecode. Then java launches the Java Virtual Machine (JVM) before running the code. The JVM knows how to run bytecode on the actual machine it is on. You can think of the JVM as a special magic box on your machine that knows how to run your .class file."
+                    },
+                    {
+                        "topicText": "In previous versions of Java, you could download a Java Runtime Environment (JRE) instead of the full JDK. The JRE was a subset of the JDK that was used for running a program but could not compile one. It was literally a subset. In fact, if you looked inside the directory structure of a JDK in older versions of Java, you would see a folder named jre. In Java 11, the JRE is no longer available as a stand-alone download or a subdirectory of the JDK. People can use the full JDK when running a Java program. Alternatively, developers can supply an executable that contains the required pieces that would have been in the JRE. The jlink command creates this executable."
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Java Class components",
+                "topicMsgList": [
+                    {
+                        "topicText": "Java classes have two primary elements: methods, often called functions or procedures in other languages, and fields, more generally known as variables. Together these are called the members of the class. Variables hold the state of the program, and methods operate on that state."
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Main Method",
+                "topicMsgList": [
+                    {
+                        "topicText": "A main() method is the gateway between the startup of a Java process, which is managed by the Java Virtual Machine (JVM), and the beginning of the programmer’s code. We can pass arguments to methods in below 3 ways</br> String[] args ,  String args[] , String... args; <br> While the previous example used the common args parameter name, you can use any valid variable name you like. The following three are also allowed: </br> String[] options , String options [] , String... options; "
+                    },
+                    {
+                        "topicText": "We can pass values to main method from command line. But make sure the correct number of arguments are passed. If we are passing not passing arguments used in code, it will throw java.lang.ArrayIndexOutOfBoundsException exception",
+                        "cardCodeList": [
+                            {
+                                "code": "&nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(args[0]);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(args[1]);<br /> &nbsp;&nbsp; &nbsp;} <br/> java Test.java Hello World",
+                                "textDesc": "It will print Hello World"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Java trigger CLI",
+                "topicMsgList": [
+                    {
+                        "topicText": "Starting in Java 11, you can run a program without compiling it first. Earlier we need to compile .java file using JAVAC command to create class file which we need to run using java command. Now we can run it directly with java command and passing .java file name. This feature is called launching single-file source-code programs. The name cleverly tells you that it can be used only if your program is one file. For multiple files still have to use JAVAC."
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Java Packages",
+                "topicMsgList": [
+                    {
+                        "topicText": "There are a number of Classes which are available in java.lang package. For these we don't need to import like System.out.println(). But for other packages we need to do import the class. We can either import the whole package with * including whole package or the specific class. Including whole package is bad idea as it can cause conflict. For example if we import both import java.util.* and import java.sql.* and use Date object it will not compile as java will not know which date to use. Another way would be to use <b>java.util.Date date </b> or <b> java.sql.Date sqlDate </b>;                        "
+                    }
+                ]
+            }
+        ]
+    }
+}

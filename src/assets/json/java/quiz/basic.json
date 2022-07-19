@@ -1,0 +1,51 @@
+{
+    "content": {
+        "header": "Basic",
+        "questionList": [
+            {
+                "question": "Which of the following are true statements? (Choose all that apply.)",
+                "optionsCheck": [
+                    "Java allows operator overloading",
+                    "Java code compiled on Windows can run on Linux",
+                    "Java has pointers to specific locations in memory.",
+                    "Java is a procedural language.",
+                    "Java is an object-oriented language",
+                    "Java is a functional programming language."
+                ],
+                "answer": [
+                    1,
+                    4
+                ],
+                "reason": "C++ has operator overloading and pointers. Java made a point of not having either. Java does have references to objects, but these are pointing to an object that can move around in memory. Option B is correct because Java is platform independent. Option E is correct because Java is object￾oriented. While it does support some parts of functional programming, these occur within a class"
+            },
+            {
+                "question": "Which of the following are true statements? (Choose all that apply.)",
+                "optionsCheck": [
+                    "1. javac compiles a .class file into a .java file.",
+                    "2. javac compiles a .java file into a .bytecode file.",
+                    "3. javac compiles a .java file into a .class file.",
+                    "4. java accepts the name of the class as a parameter.",
+                    "5. java accepts the filename of the .bytecode file as a parameter.",
+                    "6. java accepts the filename of the .class file as a parameter"
+                ],
+                "answer": [
+                    2,
+                    3
+                ],
+                "reason": "Java puts source code in .java files and bytecode in .class files. It does not use a .bytecode file. When running a Java program, you pass just the name of the class without the .class extension."
+            },
+            {
+                "question": "What will goHome return?",
+                "code": "static int goHome() {<br>  try {<br> Exception e = new Exception();<br> throw e;<br> return -1;<br> } catch (Exception e) {<br> return -2;<br> } finally {<br> return -3;<br> }",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "compilation failure"
+                ],
+                "answer": "3",
+                "reason": "Return after throw is unreachable and will not compile"
+            }
+        ]
+    }
+}
