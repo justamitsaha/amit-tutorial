@@ -1,0 +1,83 @@
+{
+    "content": {
+        "pageHeader": "Java from CLI",
+        "topicList": [
+            {
+                "topicHeader": "Java 11 CLI",
+                "topicMsgList": [
+                    {
+                        "topicText": "Starting in Java 11, you can run a program without compiling it first. Earlier we need to compile .java file using JAVAC command to create class file which we need to run using java command. Now we can run it directly with java command and passing .java file name. This feature is called launching <b> single-file source-code </b> programs. The name cleverly tells you that it can be used only if your program is one file. For multiple files still have to use JAVAC."
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Java CLI examples",
+                "topicMsgList": [
+                    {
+                        "topicText": "Let us create java files with below folder structure. Now Class A takes in an argument in main method. So we need to pass argument while running from CLI other wise the main method will throw  java.lang.ArrayIndexOutOfBoundsException , also it is inside a package so we can run like  <b> java ./packagea/ClassA.java hello <b>",
+                        "cardCodeList": [
+                            {
+                                "img": "../../../assets/json/java/tutorials/basic/folder.png"
+                            },
+                            {
+                                "code": "package packagea;<br /> <br /> public class ClassA {<br /> &nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;args[0]&quot;);<br /> &nbsp;&nbsp; &nbsp;}<br /> }"
+                            },
+                            {
+                                "code": "package packageb;<br /> <br /> import packagea.ClassA;<br /> <br /> public class ClassB {<br /> &nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;ClassA a;<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(&quot;Got it&quot;);<br /> &nbsp;&nbsp; &nbsp;}<br /> }"
+                            },
+                            {
+                                "img": "../../../assets/json/java/tutorials/basic/alternateDirectory.png"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "For classB its a little different since it has dependency on Class A. So  we have to run <b>javac packagea/ClassA.java packageb/ClassB.java</b> to compile ClassA to get class file and then ClassB. Now a class file will be generated for both. Now we can run ClassB using java command like <b>java packageb.ClassB</b>"
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Using alternate directory",
+                "topicMsgList": [
+                    {
+                        "topicText": "By default the class files will be saved in the same directory as where the java files reside. We can save to a different directory by using -d option. For example if we want to store the classes in a directory outside the package directory in a folder called classes, we need to run <b> javac -d classes packagea/ClassA.java packageb/ClassB.java</b>. In order to run the command we can user any of the below 3 commands <br /> <b>java -cp classes packageb.ClassB<br /> java -classpath classes packageb.ClassB<br /> java --class-path classes packageb.ClassB</b> "
+                    }
+                ]
+            },
+            {
+                "topicHeader": "Jar Files",
+                "topicMsgList": [
+                    {
+                        "topicText": "Just like the classes directory in the previous example, you can also specify the location of the other files explicitly using a classpath. this is helpful in loading JARS "
+                    },
+                    {
+                        "topicText": "On Windows <b> java -cp &quot;.;C:\\temp\\someOtherLocation;c:\\temp\\myJar.jar&quot; myPackage.MyClass </br>"
+                    },
+                    {
+                        "topicText": "On MAC <b> java -cp &quot;.:/tmp/someOtherLocation:/tmp/myJar.jar&quot; myPackage.MyClass</b>"
+                    },
+                    {
+                        "topicText": "The period (.) indicates you want to include the current directory in the classpath. The rest of the command says to look for loose class files (or packages) in someOtherLocation and within myJar.jar. Windows uses semicolons (;) to separate parts of the classpath; other operating systems use colons. Just like when you’re compiling, you can use a wildcard (*) to match all the JARs in a directory. Here’s an example:"
+                    },
+                    {
+                        "topicText": "<b>java -cp &quot;C:\\temp\\directoryWithJars\\*&quot; myPackage.MyClass </b>"
+                    },
+                    {
+                        "topicText": "With below command we can create jar files in current directory"
+                    },
+                    {
+                        "topicText": "<b>jar -cvf myNewFile.jar .<br /> jar --create --verbose --file myNewFile.jar </b>"
+                    },
+                    {
+                        "topicText": "For other directory use"
+                    },
+                    {
+                        "topicText": "<b> jar -cvf myNewFile.jar -C PATH </b>"
+                    },
+                    {
+                        "topicText": "-c |--create || -v | --verbose|| -f | --file || -C (for path)"
+                    }
+                ]
+            }
+        ]
+    }
+}

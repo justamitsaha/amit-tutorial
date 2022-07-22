@@ -11,6 +11,10 @@
                             "url": "/java/tutorials/basic/javaComponents"
                         },
                         {
+                            "name": "Java from CLI",
+                            "url": "/java/tutorials/basic/javaFromCli"
+                        },
+                        {
                             "name": "Blocks Execution Order",
                             "url": "/java/tutorials/basic/blocks"
                         },

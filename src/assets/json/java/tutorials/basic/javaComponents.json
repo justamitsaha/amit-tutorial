@@ -45,14 +45,6 @@
                 ]
             },
             {
-                "topicHeader": "Java trigger CLI",
-                "topicMsgList": [
-                    {
-                        "topicText": "Starting in Java 11, you can run a program without compiling it first. Earlier we need to compile .java file using JAVAC command to create class file which we need to run using java command. Now we can run it directly with java command and passing .java file name. This feature is called launching single-file source-code programs. The name cleverly tells you that it can be used only if your program is one file. For multiple files still have to use JAVAC."
-                    }
-                ]
-            },
-            {
                 "topicHeader": "Java Packages",
                 "topicMsgList": [
                     {
