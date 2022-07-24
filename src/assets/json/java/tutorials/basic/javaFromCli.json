@@ -32,6 +32,9 @@
                     },
                     {
                         "topicText": "For classB its a little different since it has dependency on Class A. So  we have to run <b>javac packagea/ClassA.java packageb/ClassB.java</b> to compile ClassA to get class file and then ClassB. Now a class file will be generated for both. Now we can run ClassB using java command like <b>java packageb.ClassB</b>"
+                    },
+                    {
+                        "topicText": "Can't create package with key words for example creating a package with name Java causes java.lang.SecurityException during compilation"
                     }
                 ]
             },

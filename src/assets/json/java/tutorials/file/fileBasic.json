@@ -1,0 +1,123 @@
+{
+    "content": {
+        "pageHeader": "File",
+        "topicList": [
+            {
+                "topicHeader": "File Basic",
+                "topicMsgList": [
+                    {
+                        "topicText": "Different operating systems use different file systems to manage their data. But the JVM will automatically connect to the local file system, allowing you to perform the same operations across multiple platforms. Different operating systems vary in their format of pathnames. For example, Unix‐based systems use the forward slash, /, for paths, whereas Windows‐based systems use the backslash, \\, character. Java offers two options to retrieve the local separator character: a system property and a static variable defined in the File class",
+                        "cardCodeList": [
+                            {
+                                "code": "System.out.println(System.getProperty(&quot;file.separator&quot;));<br /> System.out.println(java.io.File.separator);"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "java.io.File class is used to read information about existing files and directories, list the contents of a directory, and create/delete files and directories. The File class cannot read or write data within a file, although it can be passed as a reference to many stream classes to read or write data"
+                    },
+                    {
+                        "topicText": "File operator usually takes String a string which can be either an absolute path or relative path to current directory. There are 3 ways to create file. <b> Note Creating file object doesn't create a file in system</b>"
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "File file = new File(&quot;test.txt&quot;);",
+                                "textDesc": "New File from absolute or relative path"
+                            },
+                            {
+                                "code": "File file2 = new File(&quot;test.txt&quot;, &quot;new.txt&quot;);",
+                                "textDesc": "New File from parent file by providing its path"
+                            },
+                            {
+                                "code": "File file3 = new File(file, &quot;new.txt&quot;);",
+                                "textDesc": "New File from parent file by providing its reference"
+                            },
+                            {
+                                "code": "System.out.println(file.exists()); //false",
+                                "textDesc": "File is not yet created with new File yet its just a reference in memory"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "topicHeader": "File Methods",
+                "topicMsgList": [
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "file.delete()",
+                                "textDesc": "Deletes files returns boolean"
+                            },
+                            {
+                                "code": "file.exists()",
+                                "textDesc": "Check if file exists returns boolean"
+                            },
+                            {
+                                "code": "file.getAbsolutePath()",
+                                "textDesc": "Gets file path returns string"
+                            },
+                            {
+                                "code": "file.getName()",
+                                "textDesc": "Returns string gets file/directory name"
+                            }
+                        ]
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "file.getParent()",
+                                "textDesc": "Something related to parent directory"
+                            },
+                            {
+                                "code": "file.isDirectory()",
+                                "textDesc": "Returns true is the file object is directory"
+                            },
+                            {
+                                "code": "file.isFile()",
+                                "textDesc": "Returns true is the file object is file"
+                            },
+                            {
+                                "code": "file.lastModified()",
+                                "textDesc": "Last modified time"
+                            },
+                            {
+                                "code": "file.length()",
+                                "textDesc": "Number of bytes of file"
+                            }
+                        ]
+                    },
+                    {
+                        "cardCodeList": [
+                            {
+                                "code": "file.listFiles()",
+                                "textDesc": "List of files in a directory"
+                            },
+                            {
+                                "code": "file.mkdir()",
+                                "textDesc": "Creates the directory named by this path"
+                            },
+                            {
+                                "code": "file.mkdirs()",
+                                "textDesc": "Creates the directory and parent directory named by this path"
+                            },
+                            {
+                                "code": "file.renameTo(File dest)",
+                                "textDesc": "Renames the file as per the file passed in param"
+                            }
+                        ]
+                    },
+                    {
+                        "topicText": "Its important to notice from where we are running the java command in case of relative paths. For example if my class with below code is in folder src-->javatest-->Test.java. It also has a file test.txt. Now if I run file.exists() from src as java .\\javaTest\\Test.java it will return false as it will check for test.txt in src. But if we run it from javatest then it will find the file and return true",
+                        "cardCodeList": [
+                            {
+                                "code": "package javaTest;<br /> <br /> import java.io.File;<br /> <br /> public class Test {<br /> &nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;File file = new File(&quot;test.txt&quot;);<br /> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;System.out.println(file.exists());<br /> &nbsp;&nbsp; &nbsp;}<br /> }"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
